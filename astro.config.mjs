@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightOpenAPI, { openAPISidebarGroups } from "starlight-openapi";
+import starlightOpenAPI from "starlight-openapi";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config

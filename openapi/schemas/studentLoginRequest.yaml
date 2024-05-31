@@ -1,0 +1,19 @@
+type: object
+properties:
+  code:
+    type: string
+    example: "ABC123"
+  remember:
+    type: boolean
+    example: true
+  recaptcha-token:
+    type: string
+    example: "no-token-available"
+  dob:
+    type: string
+    format: date
+    example: "2000-01-01"
+required:
+  - code
+  - recaptcha-token
+  - dob

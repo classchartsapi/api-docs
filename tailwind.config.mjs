@@ -13,6 +13,11 @@ export default {
       },
     },
 
+    fontFamily: {
+      mono: ["JetBrains Mono", "monospace"],
+      sans: ["Inter Variable", "sans-serif"],
+    },
+
     extend: {
       colors: {
         accent: colors.orange,
@@ -51,5 +56,10 @@ export default {
       },
     },
   },
-  plugins: [starlightPlugin()],
+  plugins: [
+    starlightPlugin(),
+    require("@tailwindcss/typography")({
+      className: "not-content",
+    }),
+  ],
 };

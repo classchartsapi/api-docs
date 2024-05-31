@@ -1,0 +1,23 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./activityPoint.yaml"
+  meta:
+    type: object
+    properties:
+      start_date:
+        type: string
+      end_date:
+        type: string
+      last_id:
+        type: string
+      step_size:
+        type: string
+      detention_alias_uc:
+        type: string
+  success:
+    type: integer
+  error:
+    type: string

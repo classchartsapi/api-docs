@@ -1,0 +1,16 @@
+type: object
+properties:
+  success:
+    type: integer
+    example: 1
+  meta:
+    type: object
+    nullable: true
+    properties:
+      session_id:
+        type: string
+        example: "session_id_123"
+  error:
+    type: string
+    nullable: true
+    example: "Invalid login credentials"

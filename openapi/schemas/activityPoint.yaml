@@ -1,0 +1,73 @@
+type: object
+properties:
+  id:
+    type: integer
+  type:
+    type: string
+    enum:
+      - detention
+      - notice
+      - attendance_event
+      - question
+      - event
+      - behaviour
+  polarity:
+    type: string
+    enum:
+      - positive
+      - blank
+      - negative
+  reason:
+    type: string
+  score:
+    type: integer
+  timestamp:
+    type: string
+  timestamp_custom_time:
+    type: string
+    nullable: true
+  style:
+    type: object
+    properties:
+      border_color:
+        type: string
+        nullable: true
+      custom_class:
+        type: string
+        enum:
+          - notice-color
+          - colour-orange
+          - colour-blue
+          - colour-purple
+          - colour-green
+          - null
+  pupil_name:
+    type: string
+  lesson_name:
+    type: string
+    nullable: true
+  teacher_name:
+    type: string
+    nullable: true
+  room_name:
+    type: string
+    nullable: true
+  note:
+    type: string
+    nullable: true
+  _can_delete:
+    type: boolean
+  badges:
+    type: string
+  detention_date:
+    type: string
+    nullable: true
+  detention_time:
+    type: string
+    nullable: true
+  detention_location:
+    type: string
+    nullable: true
+  detention_type:
+    type: string
+    nullable: true

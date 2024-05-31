@@ -3,4 +3,4 @@ properties:
   date:
     type: string
     format: date
-    description: Date of birth
+    description: Date of birth in the format YYYY-MM-DD

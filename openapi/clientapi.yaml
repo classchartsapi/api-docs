@@ -1,38 +1,26 @@
 openapi: 3.0.1
 info:
-  title: ClassCharts API
+  title: Client API
   description: This is the OpenAPI specification for the ClassCharts API used by the StudentClient.
   version: 1.0.0
 servers:
   - url: https://www.classcharts.com/apiv2student
-    description: Base URL for Student API
+    description: Production API server
 
 paths:
-  /student/login:
-    post:
-      summary: Authenticate
-      requestBody:
-        required: true
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: "./schemas/loginRequest.yaml"
-      responses:
-        "302":
-          description: Successful authentication
-          headers:
-            Set-Cookie:
-              description: Authentication cookies
-              schema:
-                type: string
-        "401":
-          description: Unauthorized
-
   /ping:
     post:
       summary: Revalidate session
+      description: >
+        Gets basic information about the logged in student and what access they have.  
+        This endpoint is also used for revalidating your session id (authentication token).
+
+        To get your new authentication token, call the endpoint, and use the token in the returned body (`body.meta.session_id`) as your new authentication token.
+
+
+        Access tokens should be refreshed every 180 seconds.
+
       requestBody:
-        required: true
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -47,75 +35,10 @@ paths:
         "401":
           description: Unauthorized
 
-  /rewards/{studentId}:
-    get:
-      summary: Rewards
-      parameters:
-        - name: studentId
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        "200":
-          description: Array of rewards
-          content:
-            application/json:
-              schema:
-                $ref: "./schemas/rewardsResponse.yaml"
-        "401":
-          description: Unauthorized
-
-  /purchase/{itemId}:
-    post:
-      summary: Purchase reward
-      parameters:
-        - name: itemId
-          in: path
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              type: object
-              properties:
-                pupil_id:
-                  type: integer
-      responses:
-        "200":
-          description: Reward purchased
-          content:
-            application/json:
-              schema:
-                $ref: "./schemas/rewardPurchaseResponse.yaml"
-        "401":
-          description: Unauthorized
-
-  /getcode:
-    post:
-      summary: Student code
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "./schemas/getStudentCodeRequest.yaml"
-      responses:
-        "200":
-          description: Student code
-          content:
-            application/json:
-              schema:
-                $ref: "./schemas/getStudentCodeResponse.yaml"
-        "401":
-          description: Unauthorized
-
   /behaviour/{studentId}:
     get:
       summary: Behaviour
+      description: Gets the student's behaviour.
       parameters:
         - name: studentId
           in: path
@@ -142,9 +65,50 @@ paths:
         "401":
           description: Unauthorized
 
+  /activity/{studentId}:
+    get:
+      summary: Activity
+      description: >
+        The `from` field does not work as you would expect, since this endpoint is meant for pagination on the home page, Classcharts only returns a 50 points from the `to` field.
+
+
+        To get more points you will need to make use of the `last_id` field. Our [JavaScript Library](https://github.com/classchartsapi/classcharts-api-js) provides a `client.getFullActivity()` helper function to do this for you.
+
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: from
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: last_id
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Array of activity points
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/activityResponse.yaml"
+        "401":
+          description: Unauthorized
+
   /homeworks/{studentId}:
     get:
       summary: Homeworks
+      description: Gets the student's homeworks
+
       parameters:
         - name: studentId
           in: path
@@ -182,6 +146,7 @@ paths:
   /timetable/{studentId}:
     get:
       summary: Lessons
+      description: Gets the student's lessons for a given date
       parameters:
         - name: studentId
           in: path
@@ -207,6 +172,7 @@ paths:
   /eventbadges/{studentId}:
     get:
       summary: Badges
+      description: Gets the student's earned badges
       parameters:
         - name: studentId
           in: path
@@ -226,6 +192,7 @@ paths:
   /announcements/{studentId}:
     get:
       summary: Announcements
+      description: Gets the student's announcements
       parameters:
         - name: studentId
           in: path
@@ -245,6 +212,7 @@ paths:
   /detentions/{studentId}:
     get:
       summary: Detentions
+      description: Gets the student's detentions
       parameters:
         - name: studentId
           in: path
@@ -264,6 +232,7 @@ paths:
   /attendance/{studentId}:
     get:
       summary: Attendance
+      description: Gets the student's attendance
       parameters:
         - name: studentId
           in: path
@@ -292,7 +261,8 @@ paths:
 
   /customfields/{studentId}:
     get:
-      summary: Custom fields
+      summary: Pupil fields
+      description: Gets the student's pupil fields
       parameters:
         - name: studentId
           in: path
@@ -315,14 +285,6 @@ components:
       $ref: "./schemas/pingResponse.yaml"
     Student:
       $ref: "./schemas/student.yaml"
-    RewardsResponse:
-      $ref: "./schemas/rewardsResponse.yaml"
-    Reward:
-      $ref: "./schemas/reward.yaml"
-    RewardPurchaseResponse:
-      $ref: "./schemas/rewardPurchaseResponse.yaml"
-    GetStudentCodeResponse:
-      $ref: "./schemas/getStudentCodeResponse.yaml"
     BehaviourResponse:
       $ref: "./schemas/behaviourResponse.yaml"
     BehaviourTimelinePoint:
@@ -365,3 +327,5 @@ components:
       $ref: "./schemas/attendancePeriod.yaml"
     PupilFieldsResponse:
       $ref: "./schemas/pupilFieldsResponse.yaml"
+    ActivityResponse:
+      $ref: "./schemas/activityResponse.yaml"

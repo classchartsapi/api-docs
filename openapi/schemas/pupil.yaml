@@ -1,0 +1,104 @@
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  first_name:
+    type: string
+  last_name:
+    type: string
+  avatar_url:
+    type: string
+  display_behaviour:
+    type: boolean
+  display_parent_behaviour:
+    type: boolean
+  display_homework:
+    type: boolean
+  display_rewards:
+    type: boolean
+  display_detentions:
+    type: boolean
+  display_report_cards:
+    type: boolean
+  display_classes:
+    type: boolean
+  display_announcements:
+    type: boolean
+  display_attendance:
+    type: boolean
+  display_attendance_type:
+    type: string
+  display_attendance_percentage:
+    type: boolean
+  display_activity:
+    type: boolean
+  display_mental_health:
+    type: boolean
+  display_timetable:
+    type: boolean
+  is_disabled:
+    type: boolean
+  display_two_way_communications:
+    type: boolean
+  display_absences:
+    type: boolean
+  can_upload_attachments:
+    type: boolean
+  display_event_badges:
+    type: boolean
+  display_avatars:
+    type: boolean
+  display_concern_submission:
+    type: boolean
+  display_custom_fields:
+    type: boolean
+  pupil_concerns_help_text:
+    type: string
+  allow_pupils_add_timetable_notes:
+    type: boolean
+  announcements_count:
+    type: integer
+  pusher_channel_name:
+    type: string
+  has_birthday:
+    type: boolean
+  has_new_survey:
+    type: boolean
+  survey_id:
+    type: integer
+  detention_alias_plural_uc:
+    type: string
+  school_name:
+    type: string
+  school_logo:
+    type: string
+  timezone:
+    type: string
+  display_covid_tests:
+    type: boolean
+  can_record_covid_tests:
+    type: boolean
+  detention_yes_count:
+    type: integer
+  detention_no_count:
+    type: integer
+  detention_pending_count:
+    type: integer
+  detention_upscaled_count:
+    type: integer
+  homework_todo_count:
+    type: integer
+  homework_late_count:
+    type: integer
+  homework_not_completed_count:
+    type: integer
+  homework_excused_count:
+    type: integer
+  homework_completed_count:
+    type: integer
+  homework_submitted_count:
+    type: integer
+  messages_count:
+    type: integer

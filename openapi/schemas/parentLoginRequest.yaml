@@ -1,0 +1,18 @@
+type: object
+properties:
+  email:
+    type: string
+    example: "parent@example.com"
+  password:
+    type: string
+    example: "parentpassword"
+  remember:
+    type: boolean
+    example: true
+  recaptcha-token:
+    type: string
+    example: "no-token-available"
+required:
+  - email
+  - password
+  - recaptcha-token

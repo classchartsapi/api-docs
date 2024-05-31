@@ -2,12 +2,15 @@
 import { Icon } from '@astrojs/starlight/components';
 import type { Props } from '@astrojs/starlight/props';
 
-const { dir, labels, pagination } = Astro.props;
-const { prev, next } = pagination;
+const { dir, pagination } = Astro.props;
+const { prev:prevRaw, next:nextRaw } = pagination;
 const isRtl = dir === 'rtl';
+
+const prev = {...prevRaw, label: prevRaw?.label.replace(/^\[.*?\]\s*/, "")}
+const next = {...nextRaw, label: nextRaw?.label.replace(/^\[.*?\]\s*/, "")}
 ---
 
-<div class="pagination-links" dir={dir}>
+<div class="pagination-links not-prose" dir={dir}>
 	{
 		prev && (
 			<a href={prev.href} rel="prev" class="group">

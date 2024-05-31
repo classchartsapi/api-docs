@@ -1,0 +1,115 @@
+type: object
+properties:
+  success:
+    type: integer
+    example: 1
+  data:
+    type: object
+    nullable: true
+    properties:
+      id:
+        type: integer
+        example: 123
+      name:
+        type: string
+        example: "John Doe"
+      first_name:
+        type: string
+        example: "John"
+      last_name:
+        type: string
+        example: "Doe"
+      avatar_url:
+        type: string
+        example: "https://example.com/avatar.jpg"
+      display_behaviour:
+        type: boolean
+        example: true
+      display_parent_behaviour:
+        type: boolean
+        example: true
+      display_homework:
+        type: boolean
+        example: true
+      display_rewards:
+        type: boolean
+        example: true
+      display_detentions:
+        type: boolean
+        example: true
+      display_report_cards:
+        type: boolean
+        example: true
+      display_classes:
+        type: boolean
+        example: true
+      display_announcements:
+        type: boolean
+        example: true
+      display_academic_reports:
+        type: boolean
+        example: true
+      display_attendance:
+        type: boolean
+        example: true
+      display_attendance_type:
+        type: string
+        example: "detailed"
+      display_attendance_percentage:
+        type: boolean
+        example: true
+      display_activity:
+        type: boolean
+        example: true
+      display_mental_health:
+        type: boolean
+        example: true
+      display_mental_health_no_tracker:
+        type: boolean
+        example: true
+      display_timetable:
+        type: boolean
+        example: true
+      is_disabled:
+        type: boolean
+        example: false
+      display_two_way_communications:
+        type: boolean
+        example: true
+      display_absences:
+        type: boolean
+        example: true
+      can_upload_attachments:
+        type: boolean
+        example: true
+      display_event_badges:
+        type: boolean
+        example: true
+      display_avatars:
+        type: boolean
+        example: true
+      display_concern_submission:
+        type: boolean
+        example: true
+      display_custom_fields:
+        type: boolean
+        example: true
+      pupil_concerns_help_text:
+        type: string
+        example: "If you have any concerns, please talk to your teacher."
+      allow_pupils_add_timetable_notes:
+        type: boolean
+        example: true
+      detention_alias_plural_uc:
+        type: string
+        example: "Detentions"
+  meta:
+    type: object
+    properties:
+      session_id:
+        type: string
+        example: "session_id_123"
+  error:
+    type: string
+    nullable: true
+    example: "Invalid code"

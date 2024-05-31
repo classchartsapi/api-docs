@@ -2,4 +2,5 @@ type: object
 properties:
   include_data:
     type: string
+    description: "Includes a new session id in the response meta"
     default: "true"

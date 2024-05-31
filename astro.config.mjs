@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://classchartsapi.github.io",
+  base: "api-docs",
   prefetch: true,
   integrations: [
     starlight({

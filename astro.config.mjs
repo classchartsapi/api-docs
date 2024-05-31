@@ -57,14 +57,6 @@ export default defineConfig({
           link: "https://github.com/classchartsapi",
         },
         {
-          label: "[seti:rust] Rust Client Library",
-          link: "https://github.com/veloii/classcharts-rs",
-        },
-        {
-          label: "[seti:javascript(14px)] JavaScript Client Library",
-          link: "https://github.com/classchartsapi/classcharts-api-js",
-        },
-        {
           label: "Get Started",
           items: [{ label: "Introduction", link: "/" }],
         },

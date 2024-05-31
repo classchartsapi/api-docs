@@ -1,0 +1,41 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+
+import TableOfContents from '@astrojs/starlight/components/TableOfContents.astro';
+---
+
+{Astro.props.toc && (
+	<>
+		{/* <div class="xl:hidden">
+			<MobileTableOfContents {...Astro.props} />
+		</div> */}
+		<div class="hidden xl:block toc pl-8 py-10">
+			<TableOfContents {...Astro.props} />
+		</div>
+	</>
+)}
+
+<style>
+	.toc :global(h2) {
+		@apply hidden;
+	}
+
+	.toc :global(:where(a)) {
+		display: block;
+		text-decoration: none;
+		overflow-wrap: anywhere;
+		@apply text-sm text-muted-foreground py-1.5;
+	}
+	
+	.toc :global(:where(nav > ul > li > a)) {
+		@apply font-semibold !important;
+	}
+
+	.toc :global(:where(a[aria-current="true"])) {
+		@apply text-primary !important;
+	}
+
+	.toc :global(:where(a):hover) {
+		@apply text-foreground/90;
+	}
+</style>

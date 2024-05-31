@@ -1,0 +1,116 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import { flattenSidebar, type SidebarEntry } from '../utils/navigation';
+import {} from "@astrojs/starlight/schema"
+import Badge from './Badge.astro';
+
+interface Props {
+	sublist: SidebarEntry[];
+	nested?: number;
+}
+
+const { sublist, nested = 0 } = Astro.props;
+---
+
+<ul>
+	{
+		sublist.map((entry) => (
+			<li>
+				{entry.type === 'link' ? (
+					<a
+						href={entry.href}
+						aria-current={entry.isCurrent && 'page'}
+						class:list={[
+							"block px-4 text-sm py-2 rounded-lg no-underline",
+							entry.isCurrent ? 'font-semibold text-primary bg-primary/15' : 'hover:bg-muted/50 text-foreground/70',
+							entry.attrs.class
+						]}
+						style={{
+							paddingLeft: `${nested * 1}rem`
+						}}
+						{...entry.attrs}
+					>
+						<span>{entry.label}</span>
+						{entry.badge && (
+							<>
+								{' '}
+								<Badge
+									text={entry.badge.text}
+									variant={entry.isCurrent ? 'outline' : entry.badge.variant}
+								/>
+							</>
+						)}
+					</a>
+				) : (
+					<details
+						open={flattenSidebar(entry.entries).some((i) => i.isCurrent) || !entry.collapsed}
+					>
+						{nested ? (
+							<summary
+							class:list={[
+							"flex px-4 gap-1 text-sm py-2 items-center rounded-lg no-underline hover:bg-muted/50 text-foreground/70",
+						]}>
+								<div>
+									<span>{entry.label}</span>
+									{entry.badge && (
+										<>
+											{' '}
+											<Badge text={entry.badge.text} variant={entry.badge.variant} />
+										</>
+									)}
+								</div>
+								<Icon name="right-caret" class="caret" size="1.125rem" />
+							</summary>
+						) : (
+							<summary class="flex items-center justify-between px-4 py-1 rounded-lg cursor-pointer font-bold text-sm pb-2">
+								<div>
+									<span>{entry.label}</span>
+									{entry.badge && (
+										<>
+											{' '}
+											<Badge text={entry.badge.text} variant={entry.badge.variant} />
+										</>
+									)}
+								</div>
+								<Icon name="right-caret" class="caret" size="1.125rem" />
+							</summary>
+						)}
+						
+						<Astro.self sublist={entry.entries} nested={nested + 1} />
+					</details>
+				)}
+			</li>
+		))
+	}
+</ul>
+
+<style>
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	li {
+		overflow-wrap: anywhere;
+	}
+
+	summary::marker,
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.caret {
+		@apply opacity-50 flex-shrink-0 transition duration-100;
+	}
+	:global([dir='rtl']) .caret {
+		transform: rotateZ(180deg);
+	}
+	[open] > summary .caret {
+		transform: rotateZ(90deg);
+	}
+
+	a > *:not(:last-child),
+	.group-label > *:not(:last-child) {
+		margin-inline-end: 0.25em;
+	}
+</style>

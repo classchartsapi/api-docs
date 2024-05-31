@@ -1,0 +1,65 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+import MobileMenuToggle from "./MobileMenuToggle.astro";
+
+const { hasSidebar, labels } = Astro.props;
+---
+
+<div>
+	<header class="fixed top-0 w-full bg-background/70 backdrop-blur-lg z-10 py-3 border-b">
+    <div class="container">
+      <slot name="header" />
+    </div>
+  </header>
+  <div>
+    <div class="flex md:py-5 container">
+      {hasSidebar && (
+        <nav class="sidebar" aria-label={labels['sidebarNav.accessibleLabel']}>
+          <MobileMenuToggle {...Astro.props} />
+          <div id="starlight__sidebar" class="lg:w-72 z-50 p-5 lg:p-0 fixed top-16 bg-background left-0 w-full h-[calc(100%-4.4rem)] lg:top-[4.4rem] lg:left-auto lg:block lg:visible [visibility:var(--sl-sidebar-visibility,hidden)] lg:pt-8 lg:pr-6 overflow-y-auto [scrollbar-gutter:stable] mr-5">
+            <slot name="sidebar" />
+          </div>
+        </nav>
+      )}
+      
+      <div class="overfow-y-auto flex-grow lg:pl-72 pt-12">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+	:global([aria-expanded='true']) ~ #starlight__sidebar {
+		--sl-sidebar-visibility: visible;
+  }
+</style>
+
+<script>
+	function preserveSidebarScroll() {
+    const sidebar = document.getElementById("starlight__sidebar");
+		if (!sidebar) return;
+
+		// Get previous scroll position (set to "0" if not found)
+		let scrollPositionString = sessionStorage.getItem("scrollPositionSidebar")
+		if (!scrollPositionString) {
+			scrollPositionString = "0";
+		}
+    let scrollPosition = parseInt(scrollPositionString); 
+
+		// Set scroll position
+		sidebar.scrollTop = scrollPosition;
+		
+		// Listen to changes in the scroll position and save it to session storage
+    sidebar.addEventListener("scroll", () => {
+      scrollPosition = sidebar.scrollTop;
+      sessionStorage.setItem("scrollPositionSidebar", scrollPosition.toString());
+    });
+  }
+
+	const recurringScripts = () => {
+		preserveSidebarScroll();
+	}
+
+  recurringScripts()
+</script>

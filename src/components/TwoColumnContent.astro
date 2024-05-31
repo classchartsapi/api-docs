@@ -1,0 +1,34 @@
+---
+import type { Props } from "@astrojs/starlight/props"
+---
+
+<div class="xl:flex">
+	{
+		Astro.props.toc && (
+			<aside class="right-sidebar-container">
+				<div class="right-sidebar">
+					<slot name="right-sidebar" />
+				</div>
+			</aside>
+		)
+	}
+	<div class="main-pane"><slot /></div>
+</div>
+
+<style>
+	.main-pane {
+		isolation: isolate;
+	}
+
+  .right-sidebar-container {
+    @apply xl:relative xl:order-2 xl:w-full xl:max-w-xs;
+  }
+
+  .right-sidebar {
+    @apply xl:fixed xl:top-0 xl:pl-5 xl:pt-16 xl:w-full xl:h-full xl:overflow-y-auto;
+  }
+
+  .main-pane {
+    @apply xl:w-full;
+  }
+</style>

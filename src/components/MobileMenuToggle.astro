@@ -1,0 +1,75 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+import type { Props } from "@astrojs/starlight/props"
+
+const { labels } = Astro.props;
+---
+
+<starlight-menu-button>
+	<button
+		aria-expanded="false"
+		aria-label={labels['menuButton.accessibleLabel']}
+		aria-controls="starlight__sidebar"
+		class="lg:hidden grid place-items-center"
+	>
+		<Icon name="bars" />
+	</button>
+</starlight-menu-button>
+
+<script>
+	class StarlightMenuButton extends HTMLElement {
+		btn = this.querySelector('button')!;
+
+		constructor() {
+			super();
+			// Toggle `aria-expanded` state when a user clicks the button.
+			this.btn.addEventListener('click', () => this.toggleExpanded());
+
+			// Close the menu when a user presses the escape key.
+			const parentNav = this.closest('nav');
+			if (parentNav) {
+				parentNav.addEventListener('keyup', (e) => this.closeOnEscape(e));
+			}
+		}
+
+		setExpanded(expanded: boolean) {
+			this.setAttribute('aria-expanded', String(expanded));
+			document.body.toggleAttribute('data-mobile-menu-expanded', expanded);
+		}
+
+		toggleExpanded() {
+			this.setExpanded(this.getAttribute('aria-expanded') !== 'true');
+		}
+
+		closeOnEscape(e: KeyboardEvent) {
+			if (e.code === 'Escape') {
+				this.setExpanded(false);
+				this.btn.focus();
+			}
+		}
+	}
+
+	customElements.define('starlight-menu-button', StarlightMenuButton);
+</script>
+
+<style>
+	button {
+    @apply p-1 z-50 right-4 top-4 fixed size-8 text-2xl bg-transparent cursor-pointer;
+	}
+
+	[aria-expanded='true'] button {
+		opacity: 0.7;
+	}
+</style>
+
+<style is:global>
+	[data-mobile-menu-expanded] {
+		overflow: hidden;
+	}
+
+	@media (min-width: 50rem) {
+		[data-mobile-menu-expanded] {
+			overflow: auto;
+		}
+	}
+</style>

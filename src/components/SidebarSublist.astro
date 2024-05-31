@@ -11,17 +11,29 @@ interface Props {
 const { sublist: rawSublist, nested = 0 } = Astro.props;
 const validMethods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD', "TRACE"];
 
+function isExternal(href: string) {
+	return href.startsWith('http') || href.startsWith('//');
+}
+
 const sublist = rawSublist.map((entry) => {
 	if (entry.type === "group") return entry;
 
 	const method = validMethods.find((m) => entry.label.startsWith(`[${m}]`));
 	const shortMethod = method === "OPTIONS" ? "OPTNS" : method;
+	const external = isExternal(entry.href);
+
+	const icon = entry.label.match(/^\[.*?\]/)?.[0].replace(/[\[\]]/g, "");
+	const iconSize = icon?.match(/\((.*?)\)/)?.[1] || "1rem";
+	const iconName = icon?.replace(/\(.*?\)/, "");
 
 	return {
 		...entry,
 		method,
 		shortMethod: shortMethod,
 		label: entry.label.replace(/^\[.*?\]\s*/, ""),
+		external,
+		iconName,
+		iconSize,
 	}
 });
 ---
@@ -30,7 +42,29 @@ const sublist = rawSublist.map((entry) => {
 	{
 		sublist.map((entry) => (
 			<li>
-				{entry.type === 'link' ? (
+				{entry.type === 'link' ? (entry.external && entry.iconName) ? (
+					<a
+						href={entry.href}
+						class:list={[
+							"flex items-center gap-2 px-4 text-sm py-2 rounded-lg no-underline text-foreground/70 group hover:text-foreground",
+							entry.attrs.class
+						]}
+						{...entry.attrs}
+					>
+						<div class="size-7 border group-hover:border-0 group-hover:text-white text-muted-foreground rounded-lg grid place-items-center group-hover:from-blue-700 group-hover:to-blue-500 group-hover:bg-gradient-to-br bg-muted/50">
+							<Icon name={entry.iconName as any} size={entry.iconSize} />
+						</div>
+						<span>{entry.label}</span>
+						{entry.badge && (
+							<>
+								<Badge
+									text={entry.badge.text}
+									variant={entry.isCurrent ? 'outline' : entry.badge.variant}
+								/>
+							</>
+						)}
+					</a>
+				) : (
 					<a
 						href={entry.href}
 						aria-current={entry.isCurrent && 'page'}
@@ -66,7 +100,7 @@ const sublist = rawSublist.map((entry) => {
 					<details
 						open={flattenSidebar(entry.entries).some((i) => i.isCurrent) || !entry.collapsed}
 						class:list={[
-							!nested && "mb-6"
+							!nested && "my-6"
 						]}
 					>
 						{nested ? (

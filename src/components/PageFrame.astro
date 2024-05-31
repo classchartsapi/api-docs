@@ -12,7 +12,7 @@ const { hasSidebar, labels } = Astro.props;
     </div>
   </header>
   <div>
-    <div class="flex md:py-5 container">
+    <div class="flex md:py-5 container lg:gap-8">
       {hasSidebar && (
         <nav class="sidebar" aria-label={labels['sidebarNav.accessibleLabel']}>
           <MobileMenuToggle {...Astro.props} />

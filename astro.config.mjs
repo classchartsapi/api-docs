@@ -17,7 +17,7 @@ export default defineConfig({
           },
         ]),
       ],
-      title: "My Docs",
+      title: "ClassCharts API Docs",
       social: {
         github: "https://github.com/withastro/starlight",
       },

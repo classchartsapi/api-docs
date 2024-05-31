@@ -11,8 +11,9 @@ export default defineConfig({
         starlightOpenAPI([
           {
             base: "api",
-            label: "My API",
+            label: "API Reference",
             schema: "./openapi/classcharts.yaml",
+            collapsed: false,
           },
         ]),
       ],
@@ -20,20 +21,7 @@ export default defineConfig({
       social: {
         github: "https://github.com/withastro/starlight",
       },
-      sidebar: [
-        {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", link: "/guides/example/" },
-          ],
-        },
-        ...openAPISidebarGroups,
-        {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
-        },
-      ],
+      sidebar: [...openAPISidebarGroups],
     }),
   ],
 });

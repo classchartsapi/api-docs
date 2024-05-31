@@ -1,0 +1,18 @@
+type: object
+properties:
+  data:
+    type: object
+    properties:
+      single_purchase:
+        type: string
+        enum:
+          - yes
+          - no
+      order_id:
+        type: integer
+      balance:
+        type: integer
+  success:
+    type: integer
+  error:
+    type: string

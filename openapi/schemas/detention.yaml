@@ -1,0 +1,74 @@
+type: object
+properties:
+  id:
+    type: integer
+  attended:
+    type: string
+    enum:
+      - yes
+      - no
+      - upscaled
+      - pending
+  date:
+    type: string
+  length:
+    type: integer
+  location:
+    type: string
+  notes:
+    type: string
+  time:
+    type: string
+  pupil:
+    type: object
+    properties:
+      id:
+        type: integer
+      first_name:
+        type: string
+      last_name:
+        type: string
+      school:
+        type: object
+        properties:
+          opt_notes_names:
+            type: string
+          opt_notes_comments:
+            type: string
+          opt_notes_comments_pupils:
+            type: string
+  lesson:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      subject:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+  lesson_pupil_behaviour:
+    type: object
+    properties:
+      reason:
+        type: string
+  teacher:
+    type: object
+    properties:
+      id:
+        type: integer
+      first_name:
+        type: string
+      last_name:
+        type: string
+      title:
+        type: string
+  detention_type:
+    type: object
+    properties:
+      name:
+        type: string

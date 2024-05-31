@@ -1,0 +1,11 @@
+type: object
+properties:
+  consent_given:
+    type: string
+    enum:
+      - yes
+      - no
+  comment:
+    type: string
+  parent_name:
+    type: string

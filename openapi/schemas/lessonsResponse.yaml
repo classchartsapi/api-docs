@@ -1,0 +1,29 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./lesson.yaml"
+  meta:
+    type: object
+    properties:
+      dates:
+        type: array
+        items:
+          type: string
+      timetable_dates:
+        type: array
+        items:
+          type: string
+      periods:
+        type: array
+        items:
+          $ref: "./periodMeta.yaml"
+      start_time:
+        type: string
+      end_time:
+        type: string
+  success:
+    type: integer
+  error:
+    type: string

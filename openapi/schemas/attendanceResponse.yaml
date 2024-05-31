@@ -1,0 +1,31 @@
+type: object
+properties:
+  data:
+    type: object
+    additionalProperties:
+      type: object
+      additionalProperties:
+        $ref: "./attendancePeriod.yaml"
+  meta:
+    type: object
+    properties:
+      dates:
+        type: array
+        items:
+          type: string
+      sessions:
+        type: array
+        items:
+          type: string
+      start_date:
+        type: string
+      end_date:
+        type: string
+      percentage:
+        type: string
+      percentage_singe_august:
+        type: string
+  success:
+    type: integer
+  error:
+    type: string

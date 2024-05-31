@@ -1,0 +1,24 @@
+type: object
+properties:
+  data:
+    type: object
+    properties:
+      note:
+        type: string
+      fields:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            graphic:
+              type: string
+            value:
+              type: string
+  success:
+    type: integer
+  error:
+    type: string

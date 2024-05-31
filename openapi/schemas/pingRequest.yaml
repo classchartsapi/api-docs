@@ -1,0 +1,5 @@
+type: object
+properties:
+  include_data:
+    type: string
+    default: "true"

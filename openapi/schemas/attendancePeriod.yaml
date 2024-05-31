@@ -1,0 +1,20 @@
+type: object
+properties:
+  code:
+    type: string
+  status:
+    type: string
+    enum:
+      - yes
+      - present
+      - ignore
+      - no
+      - absent
+      - excused
+      - late
+  late_minutes:
+    type: integer
+  lesson_name:
+    type: string
+  room_name:
+    type: string

@@ -1,0 +1,70 @@
+type: object
+properties:
+  lesson:
+    type: string
+  subject:
+    type: string
+  teacher:
+    type: string
+  homework_type:
+    type: string
+  id:
+    type: integer
+  title:
+    type: string
+  meta_title:
+    type: string
+  description:
+    type: string
+  issue_date:
+    type: string
+  due_date:
+    type: string
+  completion_time_unit:
+    type: string
+  completion_time_value:
+    type: string
+  publish_time:
+    type: string
+  status:
+    type: object
+    properties:
+      id:
+        type: integer
+      state:
+        type: string
+        enum:
+          - not_completed
+          - late
+          - completed
+      mark:
+        type: string
+      mark_relative:
+        type: integer
+      ticked:
+        type: string
+        enum:
+          - yes
+          - no
+      allow_attachments:
+        type: boolean
+      allow_marking_completed:
+        type: boolean
+      first_seen_date:
+        type: string
+      last_seen_date:
+        type: string
+      attachments:
+        type: array
+        items:
+          $ref: "./studentHomeworkAttachment.yaml"
+      has_feedback:
+        type: boolean
+  validated_links:
+    type: array
+    items:
+      $ref: "./teacherValidatedHomeworkLink.yaml"
+  validated_attachments:
+    type: array
+    items:
+      $ref: "./teacherValidatedHomeworkAttachment.yaml"

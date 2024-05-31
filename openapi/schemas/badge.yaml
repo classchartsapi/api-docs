@@ -1,0 +1,21 @@
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  icon:
+    type: string
+  colour:
+    type: string
+  created_date:
+    type: string
+  pupil_badges:
+    type: array
+    items:
+      type: object
+      properties:
+        pupil_event:
+          $ref: "./pupilEvent.yaml"
+  icon_url:
+    type: string

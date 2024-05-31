@@ -1,0 +1,8 @@
+type: object
+properties:
+  number:
+    type: string
+  start_time:
+    type: string
+  end_time:
+    type: string

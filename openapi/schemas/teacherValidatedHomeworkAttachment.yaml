@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    type: integer
+  file_name:
+    type: string
+  file:
+    type: string
+  validated_file:
+    type: string

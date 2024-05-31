@@ -1,0 +1,6 @@
+type: object
+properties:
+  link:
+    type: string
+  validated_link:
+    type: string

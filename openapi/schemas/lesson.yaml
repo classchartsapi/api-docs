@@ -1,0 +1,38 @@
+type: object
+properties:
+  teacher_name:
+    type: string
+  teacher_id:
+    type: string
+  lesson_name:
+    type: string
+  subject_name:
+    type: string
+  is_alternative_lesson:
+    type: boolean
+  is_break:
+    type: boolean
+  period_name:
+    type: string
+  period_number:
+    type: string
+  room_name:
+    type: string
+  date:
+    type: string
+  start_time:
+    type: string
+  end_time:
+    type: string
+  key:
+    type: integer
+  note_abstract:
+    type: string
+  note:
+    type: string
+  pupil_note_abstract:
+    type: string
+  pupil_note:
+    type: string
+  pupil_note_raw:
+    type: string

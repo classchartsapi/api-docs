@@ -1,0 +1,12 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./badge.yaml"
+  meta:
+    type: array
+  success:
+    type: integer
+  error:
+    type: string

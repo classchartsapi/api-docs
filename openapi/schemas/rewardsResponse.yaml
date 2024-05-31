@@ -1,0 +1,15 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./reward.yaml"
+  meta:
+    type: object
+    properties:
+      pupil_score_balance:
+        type: integer
+  success:
+    type: integer
+  error:
+    type: string

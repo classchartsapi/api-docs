@@ -1,0 +1,18 @@
+type: object
+properties:
+  id:
+    type: integer
+  file_name:
+    type: string
+  file:
+    type: string
+  validated_file:
+    type: string
+  teacher_note:
+    type: string
+  teacher_homework_attachments:
+    type: array
+    items:
+      $ref: "./teacherValidatedHomeworkAttachment.yaml"
+  can_delete:
+    type: boolean

@@ -1,0 +1,367 @@
+openapi: 3.0.1
+info:
+  title: ClassCharts API
+  description: This is the OpenAPI specification for the ClassCharts API used by the StudentClient.
+  version: 1.0.0
+servers:
+  - url: https://www.classcharts.com/apiv2student
+    description: Base URL for Student API
+
+paths:
+  /student/login:
+    post:
+      summary: Authenticate
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "./schemas/loginRequest.yaml"
+      responses:
+        "302":
+          description: Successful authentication
+          headers:
+            Set-Cookie:
+              description: Authentication cookies
+              schema:
+                type: string
+        "401":
+          description: Unauthorized
+
+  /ping:
+    post:
+      summary: Revalidate session
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "./schemas/pingRequest.yaml"
+      responses:
+        "200":
+          description: Session ID revalidated
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/pingResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /rewards/{studentId}:
+    get:
+      summary: Rewards
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Array of rewards
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/rewardsResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /purchase/{itemId}:
+    post:
+      summary: Purchase reward
+      parameters:
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                pupil_id:
+                  type: integer
+      responses:
+        "200":
+          description: Reward purchased
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/rewardPurchaseResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /getcode:
+    post:
+      summary: Student code
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./schemas/getStudentCodeRequest.yaml"
+      responses:
+        "200":
+          description: Student code
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/getStudentCodeResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /behaviour/{studentId}:
+    get:
+      summary: Behaviour
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: from
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: Array of behaviour points
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/behaviourResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /homeworks/{studentId}:
+    get:
+      summary: Homeworks
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: display_date
+          in: query
+          schema:
+            type: string
+            enum:
+              - issue_date
+              - due_date
+            default: issue_date
+        - name: from
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: Array of homeworks
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/homeworksResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /timetable/{studentId}:
+    get:
+      summary: Lessons
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: Array of lessons
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/lessonsResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /eventbadges/{studentId}:
+    get:
+      summary: Badges
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Array of badges
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/badgesResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /announcements/{studentId}:
+    get:
+      summary: Announcements
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Array of announcements
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/announcementsResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /detentions/{studentId}:
+    get:
+      summary: Detentions
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Array of detentions
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/detentionsResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /attendance/{studentId}:
+    get:
+      summary: Attendance
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: from
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: Array of attendance dates
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/attendanceResponse.yaml"
+        "401":
+          description: Unauthorized
+
+  /customfields/{studentId}:
+    get:
+      summary: Custom fields
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Array of custom fields
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/pupilFieldsResponse.yaml"
+        "401":
+          description: Unauthorized
+
+components:
+  schemas:
+    PingResponse:
+      $ref: "./schemas/pingResponse.yaml"
+    Student:
+      $ref: "./schemas/student.yaml"
+    RewardsResponse:
+      $ref: "./schemas/rewardsResponse.yaml"
+    Reward:
+      $ref: "./schemas/reward.yaml"
+    RewardPurchaseResponse:
+      $ref: "./schemas/rewardPurchaseResponse.yaml"
+    GetStudentCodeResponse:
+      $ref: "./schemas/getStudentCodeResponse.yaml"
+    BehaviourResponse:
+      $ref: "./schemas/behaviourResponse.yaml"
+    BehaviourTimelinePoint:
+      $ref: "./schemas/behaviourTimelinePoint.yaml"
+    HomeworksResponse:
+      $ref: "./schemas/homeworksResponse.yaml"
+    Homework:
+      $ref: "./schemas/homework.yaml"
+    StudentHomeworkAttachment:
+      $ref: "./schemas/studentHomeworkAttachment.yaml"
+    TeacherValidatedHomeworkAttachment:
+      $ref: "./schemas/teacherValidatedHomeworkAttachment.yaml"
+    TeacherValidatedHomeworkLink:
+      $ref: "./schemas/teacherValidatedHomeworkLink.yaml"
+    LessonsResponse:
+      $ref: "./schemas/lessonsResponse.yaml"
+    Lesson:
+      $ref: "./schemas/lesson.yaml"
+    PeriodMeta:
+      $ref: "./schemas/periodMeta.yaml"
+    BadgesResponse:
+      $ref: "./schemas/badgesResponse.yaml"
+    Badge:
+      $ref: "./schemas/badge.yaml"
+    PupilEvent:
+      $ref: "./schemas/pupilEvent.yaml"
+    AnnouncementsResponse:
+      $ref: "./schemas/announcementsResponse.yaml"
+    Announcement:
+      $ref: "./schemas/announcement.yaml"
+    AnnouncementConsent:
+      $ref: "./schemas/announcementConsent.yaml"
+    DetentionsResponse:
+      $ref: "./schemas/detentionsResponse.yaml"
+    Detention:
+      $ref: "./schemas/detention.yaml"
+    AttendanceResponse:
+      $ref: "./schemas/attendanceResponse.yaml"
+    AttendancePeriod:
+      $ref: "./schemas/attendancePeriod.yaml"
+    PupilFieldsResponse:
+      $ref: "./schemas/pupilFieldsResponse.yaml"

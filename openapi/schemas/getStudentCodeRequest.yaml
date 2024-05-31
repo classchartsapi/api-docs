@@ -1,0 +1,6 @@
+type: object
+properties:
+  date:
+    type: string
+    format: date
+    description: Date of birth

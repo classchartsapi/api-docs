@@ -1,0 +1,95 @@
+type: object
+properties:
+  id:
+    type: integer
+  title:
+    type: string
+  description:
+    type: string
+  school_name:
+    type: string
+  teacher_name:
+    type: string
+  school_logo:
+    type: string
+  sticky:
+    type: string
+    enum:
+      - yes
+      - no
+  state:
+    type: string
+  timestamp:
+    type: string
+  attachments:
+    type: array
+    items:
+      type: object
+      properties:
+        filename:
+          type: string
+        url:
+          type: string
+  for_pupils:
+    type: array
+    items:
+      type: string
+  comment_visibility:
+    type: string
+  allow_comments:
+    type: string
+    enum:
+      - yes
+      - no
+  allow_reactions:
+    type: string
+    enum:
+      - yes
+      - no
+  allow_consent:
+    type: string
+    enum:
+      - yes
+      - no
+  priority_pinned:
+    type: string
+    enum:
+      - yes
+      - no
+  requires_consent:
+    type: string
+    enum:
+      - yes
+      - no
+  can_change_consent:
+    type: boolean
+  consent:
+    type: object
+    properties:
+      consent_given:
+        type: string
+        enum:
+          - yes
+          - no
+      comment:
+        type: string
+      parent_name:
+        type: string
+  pupil_consents:
+    type: array
+    items:
+      type: object
+      properties:
+        pupil:
+          type: object
+          properties:
+            id:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+        can_change_consent:
+          type: boolean
+        consent:
+          $ref: "./announcementConsent.yaml"

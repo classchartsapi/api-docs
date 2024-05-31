@@ -1,0 +1,28 @@
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  description:
+    type: string
+  photo:
+    type: string
+  price:
+    type: integer
+  stock_control:
+    type: boolean
+  stock:
+    type: integer
+  can_purchase:
+    type: boolean
+  unable_to_purchase_reason:
+    type: string
+  once_per_pupil:
+    type: boolean
+  purchased:
+    type: boolean
+  purchased_count:
+    type: integer
+  price_balance_difference:
+    type: integer

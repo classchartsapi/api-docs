@@ -1,0 +1,50 @@
+type: object
+properties:
+  data:
+    type: object
+    properties:
+      timeline:
+        type: array
+        items:
+          $ref: "./behaviourTimelinePoint.yaml"
+      positive_reasons:
+        type: object
+        additionalProperties:
+          type: integer
+      negative_reasons:
+        type: object
+        additionalProperties:
+          type: integer
+      other_positive:
+        type: array
+        items:
+          type: string
+      other_negative:
+        type: array
+        items:
+          type: string
+      other_positive_count:
+        type: array
+        items:
+          type: object
+        additionalProperties:
+          type: integer
+      other_negative_count:
+        type: array
+        items:
+          type: object
+        additionalProperties:
+          type: integer
+  meta:
+    type: object
+    properties:
+      start_date:
+        type: string
+      end_date:
+        type: string
+      step_size:
+        type: string
+  success:
+    type: integer
+  error:
+    type: string

@@ -1,0 +1,15 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./detention.yaml"
+  meta:
+    type: object
+    properties:
+      detention_alias_plural:
+        type: string
+  success:
+    type: integer
+  error:
+    type: string

@@ -1,0 +1,38 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./homework.yaml"
+  meta:
+    type: object
+    properties:
+      start_date:
+        type: string
+      end_date:
+        type: string
+      display_type:
+        type: string
+        enum:
+          - due_date
+          - issue_date
+      max_files_allowed:
+        type: integer
+      allowed_file_types:
+        type: array
+        items:
+          type: string
+      this_week_due_count:
+        type: integer
+      this_week_outstanding_count:
+        type: integer
+      this_week_completed_count:
+        type: integer
+      allow_attachments:
+        type: boolean
+      display_marks:
+        type: boolean
+  success:
+    type: integer
+  error:
+    type: string

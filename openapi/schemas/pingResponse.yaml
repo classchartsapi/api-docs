@@ -1,0 +1,12 @@
+type: object
+properties:
+  meta:
+    type: object
+    properties:
+      session_id:
+        type: string
+  data:
+    type: object
+    properties:
+      user:
+        $ref: "./student.yaml"

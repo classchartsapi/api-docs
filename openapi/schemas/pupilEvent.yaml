@@ -1,0 +1,31 @@
+type: object
+properties:
+  timestamp:
+    type: string
+  lesson_pupil_behaviour:
+    type: object
+    properties:
+      reason:
+        type: string
+      score:
+        type: integer
+      icon:
+        type: string
+      polarity:
+        type: string
+      timestamp:
+        type: string
+      teacher:
+        type: object
+        properties:
+          title:
+            type: string
+          first_name:
+            type: string
+          last_name:
+            type: string
+  event:
+    type: object
+    properties:
+      label:
+        type: string

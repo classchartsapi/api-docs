@@ -16,13 +16,13 @@ const { hasSidebar, labels } = Astro.props;
       {hasSidebar && (
         <nav class="sidebar" aria-label={labels['sidebarNav.accessibleLabel']}>
           <MobileMenuToggle {...Astro.props} />
-          <div id="starlight__sidebar" class="lg:w-72 z-50 p-5 lg:p-0 fixed top-16 bg-background left-0 w-full h-[calc(100%-4.4rem)] lg:top-[4.4rem] lg:left-auto lg:block lg:visible [visibility:var(--sl-sidebar-visibility,hidden)] lg:pt-8 lg:pr-6 overflow-y-auto [scrollbar-gutter:stable] mr-5">
+          <div id="starlight__sidebar" class="lg:w-80 z-50 p-5 lg:p-0 fixed top-16 bg-background left-0 w-full h-[calc(100%-4.4rem)] lg:top-[4.4rem] lg:left-auto lg:block lg:visible [visibility:var(--sl-sidebar-visibility,hidden)] lg:pt-8 lg:pr-6 overflow-y-auto [scrollbar-gutter:stable] mr-5">
             <slot name="sidebar" />
           </div>
         </nav>
       )}
       
-      <div class="overfow-y-auto flex-grow lg:pl-72 pt-12">
+      <div class="overfow-y-auto flex-grow lg:pl-80 pt-12">
         <slot />
       </div>
     </div>

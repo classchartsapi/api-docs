@@ -42,9 +42,10 @@ const sublist = rawSublist.map((entry) => {
 	{
 		sublist.map((entry) => (
 			<li>
-				{entry.type === 'link' ? (entry.external && entry.iconName) ? (
+				{entry.type === 'link' ? entry.iconName ? (
 					<a
 						href={entry.href}
+						data-astro-prefetch
 						class:list={[
 							"flex items-center gap-2 px-4 text-sm py-2 rounded-lg no-underline text-foreground/70 group hover:text-foreground",
 							entry.attrs.class
@@ -67,6 +68,7 @@ const sublist = rawSublist.map((entry) => {
 				) : (
 					<a
 						href={entry.href}
+						data-astro-prefetch
 						aria-current={entry.isCurrent && 'page'}
 						class:list={[
 							"flex items-center gap-1 px-4 text-sm py-2 rounded-lg no-underline",

@@ -13,6 +13,6 @@ properties:
   teacher_homework_attachments:
     type: array
     items:
-      $ref: "./teacherValidatedHomeworkAttachment.yaml"
+      $ref: "./teacher_validated_homework_attachment.yaml"
   can_delete:
     type: boolean

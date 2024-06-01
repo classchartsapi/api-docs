@@ -6,7 +6,7 @@ properties:
       timeline:
         type: array
         items:
-          $ref: "./behaviourTimelinePoint.yaml"
+          $ref: "./behaviour_timeline_point.yaml"
       positive_reasons:
         type: object
         additionalProperties:

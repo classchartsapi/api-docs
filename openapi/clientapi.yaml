@@ -36,13 +36,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/behaviourResponse.yaml"
+                $ref: "./schemas/behaviour/behaviour_response.yaml"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: "./schemas/errorResponse.yaml"
+                $ref: "./schemas/_common/error_response.yaml"
 
   /activity/{studentId}:
     get:
@@ -79,13 +79,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/activityResponse.yaml"
+                $ref: "./schemas/activity/activity_response.yaml"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: "./schemas/errorResponse.yaml"
+                $ref: "./schemas/_common/error_response.yaml"
 
   /homeworks/{studentId}:
     get:
@@ -122,13 +122,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/homeworksResponse.yaml"
+                $ref: "./schemas/homework/homeworks_response.yaml"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: "./schemas/errorResponse.yaml"
+                $ref: "./schemas/_common/error_response.yaml"
 
   /timetable/{studentId}:
     get:
@@ -152,13 +152,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/lessonsResponse.yaml"
+                $ref: "./schemas/lesson/lessons_response.yaml"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: "./schemas/errorResponse.yaml"
+                $ref: "./schemas/_common/error_response.yaml"
 
   /eventbadges/{studentId}:
     get:
@@ -176,13 +176,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/badgesResponse.yaml"
+                $ref: "./schemas/badge/badges_response.yaml"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: "./schemas/errorResponse.yaml"
+                $ref: "./schemas/_common/error_response.yaml"
 
   /announcements/{studentId}:
     get:
@@ -200,13 +200,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/announcementsResponse.yaml"
+                $ref: "./schemas/announcement/announcements_response.yaml"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: "./schemas/errorResponse.yaml"
+                $ref: "./schemas/_common/error_response.yaml"
 
   /detentions/{studentId}:
     get:
@@ -224,13 +224,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/detentionsResponse.yaml"
+                $ref: "./schemas/detention/detentions_response.yaml"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: "./schemas/errorResponse.yaml"
+                $ref: "./schemas/_common/error_response.yaml"
 
   /attendance/{studentId}:
     get:
@@ -258,13 +258,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/attendanceResponse.yaml"
+                $ref: "./schemas/attendance/attendance_response.yaml"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: "./schemas/errorResponse.yaml"
+                $ref: "./schemas/_common/error_response.yaml"
 
   /customfields/{studentId}:
     get:
@@ -282,10 +282,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/pupilFieldsResponse.yaml"
+                $ref: "./schemas/pupil_field/pupil_fields_response.yaml"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: "./schemas/errorResponse.yaml"
+                $ref: "./schemas/_common/error_response.yaml"

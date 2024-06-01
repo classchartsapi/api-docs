@@ -3,7 +3,7 @@ properties:
   data:
     type: array
     items:
-      $ref: "./activityPoint.yaml"
+      $ref: "./activity_point.yaml"
   meta:
     type: object
     properties:

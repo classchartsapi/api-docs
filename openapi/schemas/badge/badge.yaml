@@ -16,6 +16,6 @@ properties:
       type: object
       properties:
         pupil_event:
-          $ref: "./pupilEvent.yaml"
+          $ref: "./pupil_event.yaml"
   icon_url:
     type: string

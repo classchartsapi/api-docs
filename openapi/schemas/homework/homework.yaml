@@ -57,14 +57,14 @@ properties:
       attachments:
         type: array
         items:
-          $ref: "./studentHomeworkAttachment.yaml"
+          $ref: "./student_homework_attachment.yaml"
       has_feedback:
         type: boolean
   validated_links:
     type: array
     items:
-      $ref: "./teacherValidatedHomeworkLink.yaml"
+      $ref: "./teacher_validated_homework_link.yaml"
   validated_attachments:
     type: array
     items:
-      $ref: "./teacherValidatedHomeworkAttachment.yaml"
+      $ref: "./teacher_validated_homework_attachment.yaml"

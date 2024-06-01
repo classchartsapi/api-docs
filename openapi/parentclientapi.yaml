@@ -24,20 +24,24 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: "./schemas/pingRequest.yaml"
+              $ref: "./schemas/auth/ping_request.yaml"
       responses:
         "200":
           description: Parent information & session_id (if requested)
           content:
             application/json:
               schema:
-                $ref: "./schemas/parentPingResponse.yaml"
+                $ref: "./schemas/auth/parent_ping_response.yaml"
         "401":
           description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
 
   /pupils:
     get:
-      summary: Pupils
+      summary: List Pupils
       description: Get a list of pupils connected to this parent's account
       responses:
         "200":
@@ -45,9 +49,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/getPupilsResponse.yaml"
+                $ref: "./schemas/pupil/list_pupils_response.yaml"
         "401":
           description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
 
   /login:
     post:
@@ -63,14 +71,14 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: "./schemas/parentLoginRequest.yaml"
+              $ref: "./schemas/auth/parent_login_request.yaml"
       responses:
         "200":
           description: Successful authentication request (not necessarily successful login)
           content:
             application/json:
               schema:
-                $ref: "./schemas/parentLoginResponse.yaml"
+                $ref: "./schemas/auth/parent_login_response.yaml"
 
   /password:
     post:
@@ -95,6 +103,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/changePasswordResponse.yaml"
+                $ref: "./schemas/account/change_password_response.yaml"
         "401":
           description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"

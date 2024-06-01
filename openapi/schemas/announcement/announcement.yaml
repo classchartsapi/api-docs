@@ -92,4 +92,4 @@ properties:
         can_change_consent:
           type: boolean
         consent:
-          $ref: "./announcementConsent.yaml"
+          $ref: "./announcement_consent.yaml"

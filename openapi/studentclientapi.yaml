@@ -24,17 +24,20 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: "./schemas/pingRequest.yaml"
+              $ref: "./schemas/auth/ping_request.yaml"
       responses:
         "200":
           description: Student information & session_id (if requested)
           content:
             application/json:
               schema:
-                $ref: "./schemas/studentPingResponse.yaml"
+                $ref: "./schemas/auth/student_ping_response.yaml"
         "401":
           description: Unauthorized
-
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
   /login:
     post:
       summary: Student Login
@@ -44,14 +47,14 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: "./schemas/studentLoginRequest.yaml"
+              $ref: "./schemas/auth/student_login_request.yaml"
       responses:
         "200":
           description: Successful authentication request (not necessarily successful login)
           content:
             application/json:
               schema:
-                $ref: "./schemas/studentLoginResponse.yaml"
+                $ref: "./schemas/auth/student_login_response.yaml"
 
   /rewards/{studentId}:
     get:
@@ -69,9 +72,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/rewardsResponse.yaml"
+                $ref: "./schemas/reward/rewards_response.yaml"
         "401":
           description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
 
   /purchase/{itemId}:
     post:
@@ -98,9 +105,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/rewardPurchaseResponse.yaml"
+                $ref: "./schemas/reward/reward_purchase_response.yaml"
         "401":
           description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
 
   /getcode:
     post:
@@ -111,13 +122,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./schemas/getStudentCodeRequest.yaml"
+              $ref: "./schemas/account/get_student_code_request.yaml"
       responses:
         "200":
           description: Student code
           content:
             application/json:
               schema:
-                $ref: "./schemas/getStudentCodeResponse.yaml"
+                $ref: "./schemas/account/get_student_code_response.yaml"
         "401":
           description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"

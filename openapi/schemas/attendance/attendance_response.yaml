@@ -1,9 +1,11 @@
 type: object
 properties:
   data:
-    type: array
-    items:
-      $ref: "./lesson.yaml"
+    type: object
+    additionalProperties:
+      type: object
+      additionalProperties:
+        $ref: "./attendance_period.yaml"
   meta:
     type: object
     properties:
@@ -11,17 +13,17 @@ properties:
         type: array
         items:
           type: string
-      timetable_dates:
+      sessions:
         type: array
         items:
           type: string
-      periods:
-        type: array
-        items:
-          $ref: "./periodMeta.yaml"
-      start_time:
+      start_date:
         type: string
-      end_time:
+      end_date:
+        type: string
+      percentage:
+        type: string
+      percentage_singe_august:
         type: string
   success:
     type: integer

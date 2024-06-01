@@ -355,7 +355,7 @@ paths:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
 
-    /apiv2student/getpupilreportcards:
+  /apiv2student/getpupilreportcards:
     post:
       operationId: list-on-report-cards
       summary: List On Report Cards

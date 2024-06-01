@@ -58,26 +58,11 @@ export default defineConfig({
         },
         {
           label: "Get Started",
-          items: [{ label: "Introduction", link: "/" }],
-        },
-        {
-          label: "Authentication",
           items: [
+            { label: "Introduction", link: "/" },
             {
-              label: "Requesting Data",
-              link: "/requesting-data",
-            },
-            {
-              label: "[POST] Parent Login",
-              link: "/parent-client-api/operations/login",
-            },
-            {
-              label: "[POST] Student Login",
-              link: "/student-client-api/operations/login",
-            },
-            {
-              label: "[POST] Revalidate Session",
-              link: "/client-api/operations/ping",
+              label: "Authentication",
+              link: "/authentication",
             },
           ],
         },
@@ -126,6 +111,14 @@ export default defineConfig({
           label: "Student Endpoints",
           items: [
             {
+              label: "[POST] Login",
+              link: "/student-client-api/operations/login",
+            },
+            {
+              label: "[POST] Ping",
+              link: "/student-client-api/operations/ping",
+            },
+            {
               label: "[GET] Rewards",
               link: "/student-client-api/operations/rewardsstudentid",
             },
@@ -142,6 +135,14 @@ export default defineConfig({
         {
           label: "Parent Endpoints",
           items: [
+            {
+              label: "[POST] Login",
+              link: "/parent-client-api/operations/login",
+            },
+            {
+              label: "[POST] Ping",
+              link: "/parent-client-api/operations/ping",
+            },
             {
               label: "[GET] Pupils",
               link: "/parent-client-api/operations/pupils",

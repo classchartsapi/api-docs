@@ -1,0 +1,29 @@
+type: object
+properties:
+  meta:
+    type: object
+    properties:
+      version:
+        type: string
+        description: The version of the API
+      session_id:
+        type: string
+        description: Only included if `include_data` is true
+        nullable: true
+  data:
+    type: object
+    properties:
+      user:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          email:
+            type: string
+          language:
+            type: string
+            nullable: true
+          isEmailVerified:
+            type: boolean

@@ -2,12 +2,39 @@ openapi: 3.0.1
 info:
   title: Parent Client API
   description: This is the OpenAPI specification for the ClassCharts API used by the ParentClient.
-  version: 1.0.0
+  version: 28.7.1
 servers:
   - url: https://www.classcharts.com/apiv2parent
-    description: Production API server
+    description: Parent API
 
 paths:
+  /ping:
+    post:
+      summary: Parent Ping
+      description: >
+        Gets basic information about the logged in parent and what access they have.  
+        This endpoint is also used for revalidating your session id (authentication token).
+
+        To get your new authentication token, call the endpoint, and use the token in the returned body (`body.meta.session_id`) as your new authentication token.
+
+
+        Access tokens should be refreshed every 180 seconds.
+
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "./schemas/pingRequest.yaml"
+      responses:
+        "200":
+          description: Parent information & session_id (if requested)
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/parentPingResponse.yaml"
+        "401":
+          description: Unauthorized
+
   /pupils:
     get:
       summary: Pupils
@@ -71,10 +98,3 @@ paths:
                 $ref: "./schemas/changePasswordResponse.yaml"
         "401":
           description: Unauthorized
-
-components:
-  schemas:
-    GetPupilsResponse:
-      $ref: "./schemas/getPupilsResponse.yaml"
-    ChangePasswordResponse:
-      $ref: "./schemas/changePasswordResponse.yaml"

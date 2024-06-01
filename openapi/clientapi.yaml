@@ -2,39 +2,14 @@ openapi: 3.0.1
 info:
   title: Client API
   description: This is the OpenAPI specification for the ClassCharts API used by the StudentClient.
-  version: 1.0.0
+  version: 28.7.1
 servers:
+  - url: https://www.classcharts.com/apiv2parent
+    description: Parent API
   - url: https://www.classcharts.com/apiv2student
-    description: Production API server
+    description: Student API
 
 paths:
-  /ping:
-    post:
-      summary: Revalidate session
-      description: >
-        Gets basic information about the logged in student and what access they have.  
-        This endpoint is also used for revalidating your session id (authentication token).
-
-        To get your new authentication token, call the endpoint, and use the token in the returned body (`body.meta.session_id`) as your new authentication token.
-
-
-        Access tokens should be refreshed every 180 seconds.
-
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: "./schemas/pingRequest.yaml"
-      responses:
-        "200":
-          description: Session ID revalidated
-          content:
-            application/json:
-              schema:
-                $ref: "./schemas/pingResponse.yaml"
-        "401":
-          description: Unauthorized
-
   /behaviour/{studentId}:
     get:
       summary: Behaviour
@@ -278,54 +253,3 @@ paths:
                 $ref: "./schemas/pupilFieldsResponse.yaml"
         "401":
           description: Unauthorized
-
-components:
-  schemas:
-    PingResponse:
-      $ref: "./schemas/pingResponse.yaml"
-    Student:
-      $ref: "./schemas/student.yaml"
-    BehaviourResponse:
-      $ref: "./schemas/behaviourResponse.yaml"
-    BehaviourTimelinePoint:
-      $ref: "./schemas/behaviourTimelinePoint.yaml"
-    HomeworksResponse:
-      $ref: "./schemas/homeworksResponse.yaml"
-    Homework:
-      $ref: "./schemas/homework.yaml"
-    StudentHomeworkAttachment:
-      $ref: "./schemas/studentHomeworkAttachment.yaml"
-    TeacherValidatedHomeworkAttachment:
-      $ref: "./schemas/teacherValidatedHomeworkAttachment.yaml"
-    TeacherValidatedHomeworkLink:
-      $ref: "./schemas/teacherValidatedHomeworkLink.yaml"
-    LessonsResponse:
-      $ref: "./schemas/lessonsResponse.yaml"
-    Lesson:
-      $ref: "./schemas/lesson.yaml"
-    PeriodMeta:
-      $ref: "./schemas/periodMeta.yaml"
-    BadgesResponse:
-      $ref: "./schemas/badgesResponse.yaml"
-    Badge:
-      $ref: "./schemas/badge.yaml"
-    PupilEvent:
-      $ref: "./schemas/pupilEvent.yaml"
-    AnnouncementsResponse:
-      $ref: "./schemas/announcementsResponse.yaml"
-    Announcement:
-      $ref: "./schemas/announcement.yaml"
-    AnnouncementConsent:
-      $ref: "./schemas/announcementConsent.yaml"
-    DetentionsResponse:
-      $ref: "./schemas/detentionsResponse.yaml"
-    Detention:
-      $ref: "./schemas/detention.yaml"
-    AttendanceResponse:
-      $ref: "./schemas/attendanceResponse.yaml"
-    AttendancePeriod:
-      $ref: "./schemas/attendancePeriod.yaml"
-    PupilFieldsResponse:
-      $ref: "./schemas/pupilFieldsResponse.yaml"
-    ActivityResponse:
-      $ref: "./schemas/activityResponse.yaml"

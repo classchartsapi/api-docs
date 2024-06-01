@@ -2,12 +2,39 @@ openapi: 3.0.1
 info:
   title: Student Client API
   description: This is the OpenAPI specification for the ClassCharts API used by the StudentClient.
-  version: 1.0.0
+  version: 28.7.1
 servers:
   - url: https://www.classcharts.com/apiv2student
-    description: Production API server
+    description: Student API
 
 paths:
+  /ping:
+    post:
+      summary: Student Ping
+      description: >
+        Gets basic information about the logged in student and what access they have.  
+        This endpoint is also used for revalidating your session id (authentication token).
+
+        To get your new authentication token, call the endpoint, and use the token in the returned body (`body.meta.session_id`) as your new authentication token.
+
+
+        Access tokens should be refreshed every 180 seconds.
+
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "./schemas/pingRequest.yaml"
+      responses:
+        "200":
+          description: Student information & session_id (if requested)
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/studentPingResponse.yaml"
+        "401":
+          description: Unauthorized
+
   /login:
     post:
       summary: Student Login
@@ -94,14 +121,3 @@ paths:
                 $ref: "./schemas/getStudentCodeResponse.yaml"
         "401":
           description: Unauthorized
-
-components:
-  schemas:
-    RewardsResponse:
-      $ref: "./schemas/rewardsResponse.yaml"
-    Reward:
-      $ref: "./schemas/reward.yaml"
-    RewardPurchaseResponse:
-      $ref: "./schemas/rewardPurchaseResponse.yaml"
-    GetStudentCodeResponse:
-      $ref: "./schemas/getStudentCodeResponse.yaml"

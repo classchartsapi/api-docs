@@ -355,7 +355,7 @@ paths:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
 
-  /apiv2student/getpupilreportcards:
+  /getpupilreportcards:
     post:
       operationId: list-on-report-cards
       summary: List On Report Cards
@@ -379,7 +379,7 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
-  /apiv2student/getpupilreportcard/{id}:
+  /getpupilreportcard/{id}:
     get:
       operationId: get-on-report-card
       summary: Get On Report Card
@@ -409,7 +409,8 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
-  /apiv2student/getpupilreportcardsummarycomment/{id}:
+
+  /getpupilreportcardsummarycomment/{id}:
     get:
       operationId: get-on-report-card-summary-comment
       summary: Get On Report Card Summary Comment
@@ -444,7 +445,7 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
-  /apiv2student/getpupilreportcardtarget/{id}:
+  /getpupilreportcardtarget/{id}:
     get:
       operationId: get-on-report-card-target
       summary: Get On Report Card Target

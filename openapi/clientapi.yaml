@@ -296,7 +296,7 @@ paths:
       description: Get list of academic reports
       parameters:
         - name: studentId
-          in: path
+          in: query
           required: true
           schema:
             type: integer
@@ -319,6 +319,11 @@ paths:
       summary: Academic report
       description: Get academic report by ID
       parameters:
+        - name: studentId
+          in: query
+          required: true
+          schema:
+            type: integer
         - name: id
           in: path
           required: true

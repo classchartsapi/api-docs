@@ -106,6 +106,14 @@ export default defineConfig({
               label: "[GET] Pupil Fields",
               link: "/client-api/operations/customfieldsstudentid",
             },
+            {
+              label: "[GET] List Academic Reports",
+              link: "/client-api/operations/getacademicreports",
+            },
+            {
+              label: "[GET] Get Academic Report",
+              link: "/client-api/operations/getacademicreportid",
+            },
           ],
         },
         {

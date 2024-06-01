@@ -19,5 +19,3 @@ properties:
         type: string
   success:
     type: integer
-  error:
-    type: string

@@ -1,0 +1,15 @@
+type: object
+properties:
+  data:
+    nullable: true
+  meta:
+    nullable: true
+  success:
+    type: integer
+    example: 0
+  expired:
+    type: integer
+    example: 0
+  error:
+    type: string
+    example: "Invalid request"

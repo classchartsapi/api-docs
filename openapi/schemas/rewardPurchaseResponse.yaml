@@ -14,5 +14,3 @@ properties:
         type: integer
   success:
     type: integer
-  error:
-    type: string

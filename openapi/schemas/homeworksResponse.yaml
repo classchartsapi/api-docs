@@ -34,5 +34,3 @@ properties:
         type: boolean
   success:
     type: integer
-  error:
-    type: string

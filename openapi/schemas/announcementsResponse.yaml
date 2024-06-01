@@ -8,5 +8,3 @@ properties:
     type: array
   success:
     type: integer
-  error:
-    type: string

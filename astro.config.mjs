@@ -65,6 +65,10 @@ export default defineConfig({
               label: "Authentication",
               link: "/authentication",
             },
+            {
+              label: "Coverage",
+              link: "/coverage",
+            },
           ],
         },
         {

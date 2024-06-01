@@ -47,12 +47,17 @@ const sublist = rawSublist.map((entry) => {
 						href={entry.href}
 						data-astro-prefetch
 						class:list={[
-							"flex items-center gap-2 px-4 text-sm py-2 rounded-lg no-underline text-foreground/70 group hover:text-foreground",
+							"flex items-center gap-2 px-4 text-sm py-2 rounded-lg no-underline group hover:text-foreground",
+							entry.isCurrent ? 'text-white' : 'text-foreground/70',
 							entry.attrs.class
 						]}
 						{...entry.attrs}
 					>
-						<div class="size-7 border group-hover:border-0 group-hover:text-white text-muted-foreground rounded-lg grid place-items-center group-hover:from-blue-700 group-hover:to-blue-500 group-hover:bg-gradient-to-br bg-muted/50">
+						<div class:list={[
+							"size-7 rounded-lg grid place-items-center",
+							"group-hover:from-blue-700 group-hover:to-blue-500 group-hover:bg-gradient-to-br group-hover:text-white group-hover:border-0",
+							entry.isCurrent ? "from-blue-700 to-blue-500 bg-gradient-to-br text-white" : "bg-muted/50 border text-muted-foreground"
+						]}>
 							<Icon name={entry.iconName as any} size={entry.iconSize} />
 						</div>
 						<span>{entry.label}</span>

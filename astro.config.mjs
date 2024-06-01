@@ -54,8 +54,12 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: "[seti:github] GitHub",
-          link: "https://github.com/classchartsapi",
+          label: "[github] Repository",
+          link: "https://github.com/classchartsapi/api-docs",
+        },
+        {
+          label: "[warning] Report issue",
+          link: "https://github.com/classchartsapi/api-docs/issues/new",
         },
         {
           label: "Get Started",
@@ -64,6 +68,10 @@ export default defineConfig({
             {
               label: "Authentication",
               link: "/authentication",
+            },
+            {
+              label: "Client Libraries",
+              link: "/client-libraries",
             },
             {
               label: "Coverage",

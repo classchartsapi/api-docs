@@ -1,0 +1,16 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./on_report_card.yaml"
+  meta:
+    type: object
+    properties:
+      forbidden_days_of_week:
+        type: array
+        items:
+          type: integer
+  success:
+    type: boolean
+    example: true

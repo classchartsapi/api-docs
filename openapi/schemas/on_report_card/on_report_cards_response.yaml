@@ -1,0 +1,11 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./preview_on_report_card.yaml"
+  meta:
+    type: array
+  success:
+    type: boolean
+    example: true

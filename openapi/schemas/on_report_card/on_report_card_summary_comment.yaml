@@ -1,0 +1,12 @@
+type: object
+properties:
+  id:
+    type: integer
+  report_card_id:
+    type: integer
+  text:
+    type: string
+  teacher_name:
+    type: string
+  date:
+    type: string

@@ -1,0 +1,8 @@
+type: object
+properties:
+  id:
+    type: integer
+  pupil_report_card:
+    $ref: "./on_report_card_target_pupil_report_card.yaml"
+  description:
+    type: string

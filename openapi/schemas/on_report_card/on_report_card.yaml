@@ -1,0 +1,27 @@
+type: object
+properties:
+  id:
+    type: integer
+  start_date:
+    type: string
+  end_date:
+    type: string
+  reason:
+    type: string
+  level:
+    type: string
+    nullable: true
+  teacher:
+    type: string
+    nullable: true
+  description:
+    type: string
+  parent_comments:
+    type: array
+    items:
+      $ref: "./on_report_card_comment.yaml"
+    nullable: true
+  targets:
+    type: array
+    items:
+      $ref: "./preview_on_report_card_target.yaml"

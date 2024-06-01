@@ -1,0 +1,7 @@
+type: object
+properties:
+  id:
+    type: integer
+  required_teacher_action:
+    type: string
+    nullable: true

@@ -1,0 +1,22 @@
+type: object
+properties:
+  id:
+    type: integer
+  mark_id:
+    type: integer
+    nullable: true
+  met:
+    type: string
+    nullable: true
+  label:
+    type: string
+  comment_description:
+    type: string
+  comment_created:
+    type: string
+  mark_ranking:
+    type: string
+    nullable: true
+  teacher_name:
+    type: string
+    nullable: true

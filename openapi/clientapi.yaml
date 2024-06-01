@@ -354,3 +354,128 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+
+    /apiv2student/getpupilreportcards:
+    post:
+      operationId: list-on-report-cards
+      summary: List On Report Cards
+      description: Get list of on report cards
+      parameters:
+        - name: pupil_id
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/on_report_card/on_report_cards_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
+  /apiv2student/getpupilreportcard/{id}:
+    get:
+      operationId: get-on-report-card
+      summary: Get On Report Card
+      description: Get on report card by ID
+      parameters:
+        - name: pupil_id
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the on report card
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/on_report_card/on_report_card_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
+  /apiv2student/getpupilreportcardsummarycomment/{id}:
+    get:
+      operationId: get-on-report-card-summary-comment
+      summary: Get On Report Card Summary Comment
+      description: Get on report card summary comment by date
+      parameters:
+        - name: pupil_id
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+          description: "The date of the summary comment (format: YYYY-MM-DD)"
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/on_report_card/on_report_card_summary_comment_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
+  /apiv2student/getpupilreportcardtarget/{id}:
+    get:
+      operationId: get-on-report-card-target
+      summary: Get On Report Card Target
+      description: Get on report card target
+      parameters:
+        - name: pupil_id
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+          description: "The date of the target period (format: YYYY-MM-DD)"
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/on_report_card/on_report_card_target_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"

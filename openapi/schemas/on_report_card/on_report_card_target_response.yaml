@@ -1,0 +1,14 @@
+type: object
+properties:
+  data:
+    type: object
+    properties:
+      target:
+        $ref: "./on_report_card_target.yaml"
+      periods:
+        type: array
+        items:
+          $ref: "./on_report_card_target_period.yaml"
+  success:
+    type: boolean
+    example: true

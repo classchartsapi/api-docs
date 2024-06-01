@@ -1,0 +1,12 @@
+type: object
+properties:
+  id:
+    type: integer
+  start_date:
+    type: string
+  end_date:
+    type: string
+  reason:
+    type: string
+  description:
+    type: string

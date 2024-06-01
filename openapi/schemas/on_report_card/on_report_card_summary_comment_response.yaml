@@ -1,0 +1,9 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./on_report_card_summary_comment.yaml"
+  success:
+    type: boolean
+    example: true

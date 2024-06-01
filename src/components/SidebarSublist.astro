@@ -71,7 +71,7 @@ const sublist = rawSublist.map((entry) => {
 						data-astro-prefetch
 						aria-current={entry.isCurrent && 'page'}
 						class:list={[
-							"flex items-center gap-1 px-4 text-sm py-2 rounded-lg no-underline",
+							"flex gap-1 px-4 text-sm py-2 rounded-lg no-underline",
 							entry.isCurrent ? 'font-semibold text-primary bg-primary/15' : 'hover:bg-muted/50 text-foreground/70',
 							entry.attrs.class
 						]}
@@ -81,9 +81,9 @@ const sublist = rawSublist.map((entry) => {
 						{...entry.attrs}
 					>
 						{entry.method && (
-							<div class="w-11">
+							<div class="w-11 flex-shrink-0 -mt-px">
 								<span class:list={[
-									"px-1 py-0.5 rounded-[0.3rem] text-[0.55rem] leading-tight font-bold text-white",
+									"px-1 py-0.5 rounded-[0.3rem] text-[0.55rem] leading-tight font-bold text-white whitespace-nowrap",
 									entry.method.toLowerCase()
 								]}>{entry.shortMethod}</span>
 							</div>

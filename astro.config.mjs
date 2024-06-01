@@ -69,11 +69,11 @@ export default defineConfig({
             },
             {
               label: "[POST] Parent Login",
-              link: "/parent-client-api/operations/parentlogin",
+              link: "/parent-client-api/operations/login",
             },
             {
               label: "[POST] Student Login",
-              link: "/student-client-api/operations/studentlogin",
+              link: "/student-client-api/operations/login",
             },
             {
               label: "[POST] Revalidate Session",

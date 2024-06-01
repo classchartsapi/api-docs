@@ -22,7 +22,7 @@ paths:
         "401":
           description: Unauthorized
 
-  /parent/login:
+  /login:
     post:
       summary: Parent Login
       description: >

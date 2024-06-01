@@ -8,7 +8,7 @@ servers:
     description: Production API server
 
 paths:
-  /student/login:
+  /login:
     post:
       summary: Student Login
       description: Logs in a student.

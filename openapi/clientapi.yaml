@@ -294,6 +294,12 @@ paths:
     get:
       summary: Academic reports
       description: Get list of academic reports
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         "200":
           description: Successful response

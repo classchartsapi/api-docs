@@ -16,8 +16,10 @@ const { hasSidebar, labels } = Astro.props;
       {hasSidebar && (
         <nav class="sidebar" aria-label={labels['sidebarNav.accessibleLabel']}>
           <MobileMenuToggle {...Astro.props} />
-          <div id="starlight__sidebar" class="lg:w-80 z-50 p-5 lg:p-0 fixed top-16 bg-background left-0 w-full h-[calc(100%-4.4rem)] lg:top-[4.4rem] lg:left-auto lg:block lg:visible [visibility:var(--sl-sidebar-visibility,hidden)] lg:pt-8 lg:pr-6 overflow-y-auto [scrollbar-gutter:stable] mr-5">
-            <slot name="sidebar" />
+          <div id="starlight__sidebar" class="lg:w-80 z-50 fixed top-16 bg-background left-0 w-full h-[calc(100%-4.4rem)] lg:top-[4.4rem] lg:left-auto lg:block lg:visible [visibility:var(--sl-sidebar-visibility,hidden)] [scrollbar-gutter:stable] mr-5 ">
+            <div id="starlight__sidebar_overflow" class="p-5 lg:p-0 fade overflow-y-auto h-full lg:pt-8 lg:pr-6">
+              <slot name="sidebar" />
+            </div>
           </div>
         </nav>
       )}
@@ -30,6 +32,10 @@ const { hasSidebar, labels } = Astro.props;
 </div>
 
 <style>
+  .fade {
+    mask-image: linear-gradient(to bottom, transparent 0%, black 45px, black calc(100% - 45px), transparent 100%);
+  }
+
 	:global([aria-expanded='true']) ~ #starlight__sidebar {
 		--sl-sidebar-visibility: visible;
   }
@@ -37,7 +43,7 @@ const { hasSidebar, labels } = Astro.props;
 
 <script>
 	function preserveSidebarScroll() {
-    const sidebar = document.getElementById("starlight__sidebar");
+    const sidebar = document.getElementById("starlight__sidebar_overflow");
 		if (!sidebar) return;
 
 		// Get previous scroll position (set to "0" if not found)
@@ -57,9 +63,5 @@ const { hasSidebar, labels } = Astro.props;
     });
   }
 
-	const recurringScripts = () => {
-		preserveSidebarScroll();
-	}
-
-  recurringScripts()
+  preserveSidebarScroll();
 </script>

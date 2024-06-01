@@ -13,7 +13,7 @@ paths:
   /behaviour/{studentId}:
     get:
       operationId: list-behaviour
-      summary: Behaviour
+      summary: List Behaviour
       description: Gets the student's behaviour.
       parameters:
         - name: studentId
@@ -48,7 +48,7 @@ paths:
   /activity/{studentId}:
     get:
       operationId: list-activity
-      summary: Activity
+      summary: List Activity
       description: >
         The `from` field does not work as you would expect, since this endpoint is meant for pagination on the home page, Classcharts only returns a 50 points from the `to` field.
 
@@ -92,7 +92,7 @@ paths:
   /homeworks/{studentId}:
     get:
       operationId: list-homeworks
-      summary: Homeworks
+      summary: List Homeworks
       description: Gets the student's homeworks
 
       parameters:
@@ -136,7 +136,7 @@ paths:
   /timetable/{studentId}:
     get:
       operationId: list-lessons
-      summary: Lessons
+      summary: List Lessons
       description: Gets the student's lessons for a given date
       parameters:
         - name: studentId
@@ -167,7 +167,7 @@ paths:
   /eventbadges/{studentId}:
     get:
       operationId: list-badges
-      summary: Badges
+      summary: List Badges
       description: Gets the student's earned badges
       parameters:
         - name: studentId
@@ -192,7 +192,7 @@ paths:
   /announcements/{studentId}:
     get:
       operationId: list-announcements
-      summary: Announcements
+      summary: List Announcements
       description: Gets the student's announcements
       parameters:
         - name: studentId
@@ -217,7 +217,7 @@ paths:
   /detentions/{studentId}:
     get:
       operationId: list-detentions
-      summary: Detentions
+      summary: List Detentions
       description: Gets the student's detentions
       parameters:
         - name: studentId
@@ -242,7 +242,7 @@ paths:
   /attendance/{studentId}:
     get:
       operationId: get-attendance
-      summary: Attendance
+      summary: List Attendance
       description: Gets the student's attendance
       parameters:
         - name: studentId
@@ -277,7 +277,7 @@ paths:
   /customfields/{studentId}:
     get:
       operationId: list-pupil-fields
-      summary: Pupil fields
+      summary: List Pupil Fields
       description: Gets the student's pupil fields
       parameters:
         - name: studentId
@@ -302,7 +302,7 @@ paths:
   /getacademicreports:
     get:
       operationId: list-academic-reports
-      summary: Academic reports
+      summary: List Academic Reports
       description: Get list of academic reports
       parameters:
         - name: studentId
@@ -327,7 +327,7 @@ paths:
   /getacademicreport/{id}:
     get:
       operationId: get-academic-report
-      summary: Academic report
+      summary: Get Academic Report
       description: Get academic report by ID
       parameters:
         - name: studentId

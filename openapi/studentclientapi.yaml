@@ -10,6 +10,7 @@ servers:
 paths:
   /ping:
     post:
+      operationId: ping
       summary: Student Ping
       description: >
         Gets basic information about the logged in student and what access they have.  
@@ -40,6 +41,7 @@ paths:
                 $ref: "./schemas/_common/error_response.yaml"
   /login:
     post:
+      operationId: login
       summary: Student Login
       description: Logs in a student.
       requestBody:
@@ -58,6 +60,7 @@ paths:
 
   /rewards/{studentId}:
     get:
+      operationId: list-rewards
       summary: Rewards
       description: Gets the available items in the student's rewards shop.
       parameters:
@@ -82,6 +85,7 @@ paths:
 
   /purchase/{itemId}:
     post:
+      operationId: purchase-reward
       summary: Purchase reward
       description: Purchase a reward item from the student's rewards shop.
       parameters:
@@ -115,6 +119,7 @@ paths:
 
   /getcode:
     post:
+      operationId: get-student-code
       summary: Student code
       description: Gets the student's student code
       requestBody:

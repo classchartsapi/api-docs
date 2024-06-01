@@ -72,47 +72,47 @@ export default defineConfig({
           items: [
             {
               label: "[GET] Activity",
-              link: "/client-api/operations/activitystudentid",
+              link: "/client-api/operations/list-activity",
             },
             {
               label: "[GET] Behaviour",
-              link: "/client-api/operations/behaviourstudentid",
+              link: "/client-api/operations/list-behaviour",
             },
             {
               label: "[GET] Homeworks",
-              link: "/client-api/operations/homeworksstudentid",
+              link: "/client-api/operations/list-homeworks",
             },
             {
               label: "[GET] Lessons",
-              link: "/client-api/operations/timetablestudentid",
+              link: "/client-api/operations/list-lessons",
             },
             {
               label: "[GET] Badges",
-              link: "/client-api/operations/eventbadgesstudentid",
+              link: "/client-api/operations/list-badges",
             },
             {
               label: "[GET] Announcements",
-              link: "/client-api/operations/announcementsstudentid",
+              link: "/client-api/operations/list-announcements",
             },
             {
               label: "[GET] Detentions",
-              link: "/client-api/operations/detentionsstudentid",
+              link: "/client-api/operations/list-detentions",
             },
             {
               label: "[GET] Attendance",
-              link: "/client-api/operations/attendancestudentid",
+              link: "/client-api/operations/get-attendance",
             },
             {
               label: "[GET] Pupil Fields",
-              link: "/client-api/operations/customfieldsstudentid",
+              link: "/client-api/operations/list-pupil-fields",
             },
             {
               label: "[GET] List Academic Reports",
-              link: "/client-api/operations/getacademicreports",
+              link: "/client-api/operations/list-academic-reports",
             },
             {
               label: "[GET] Get Academic Report",
-              link: "/client-api/operations/getacademicreportid",
+              link: "/client-api/operations/get-academic-report",
             },
           ],
         },
@@ -129,15 +129,15 @@ export default defineConfig({
             },
             {
               label: "[GET] Rewards",
-              link: "/student-client-api/operations/rewardsstudentid",
+              link: "/student-client-api/operations/list-rewards",
             },
             {
               label: "[POST] Purchase Reward",
-              link: "/student-client-api/operations/purchaseitemid",
+              link: "/student-client-api/operations/purchase-reward",
             },
             {
               label: "[POST] Student Code",
-              link: "/student-client-api/operations/getcode",
+              link: "/student-client-api/operations/get-student-code",
             },
           ],
         },
@@ -154,11 +154,11 @@ export default defineConfig({
             },
             {
               label: "[GET] Pupils",
-              link: "/parent-client-api/operations/pupils",
+              link: "/parent-client-api/operations/list-pupils",
             },
             {
               label: "[POST] Change Password",
-              link: "/parent-client-api/operations/password",
+              link: "/parent-client-api/operations/change-password",
             },
           ],
         },

@@ -31,9 +31,6 @@ paths:
 
         This endpoint is used to authenticate a parent account. If the login is successful, a session ID will be returned in the response. This session ID should be used in subsequent requests to authenticate the parent account.
 
-
-        If you have a ClassCharts Parent account, we'd love if you could send your response (a redacted version of course) to this endpoint as a comment on this [GitHub Issue](https://github.com/classchartsapi/api-docs/issues/2). This will help us to improve our API documentation and make it easier for developers to use our API.
-
       requestBody:
         required: true
         content:

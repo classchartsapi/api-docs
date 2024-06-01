@@ -3,6 +3,21 @@ properties:
   success:
     type: integer
     example: 1
+  data:
+    type: object
+    nullable: true
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      email:
+        type: string
+      language:
+        type: string
+        nullable: true
+      isEmailVerified:
+        type: boolean
   meta:
     type: object
     nullable: true

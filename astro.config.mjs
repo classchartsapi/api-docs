@@ -177,15 +177,15 @@ export default defineConfig({
               link: "/client-api/operations/list-on-report-cards",
             },
             {
-              label: "[POST] Get Report Card",
+              label: "[GET] Get Report Card",
               link: "/client-api/operations/get-on-report-card",
             },
             {
-              label: "[POST] Get Report Card Summary",
+              label: "[GET] Get Report Card Summary",
               link: "/client-api/operations/get-on-report-card-summary-comment",
             },
             {
-              label: "[POST] Get Report Card Target",
+              label: "[GET] Get Report Card Target",
               link: "/client-api/operations/get-on-report-card-target",
             },
           ],

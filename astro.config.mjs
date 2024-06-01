@@ -8,6 +8,7 @@ export default defineConfig({
   site: "https://classchartsapi.github.io",
   base: "api-docs",
   prefetch: true,
+  trailingSlash: "always",
   integrations: [
     starlight({
       customCss: [

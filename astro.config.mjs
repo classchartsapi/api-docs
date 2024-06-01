@@ -71,39 +71,39 @@ export default defineConfig({
           label: "Global Endpoints",
           items: [
             {
-              label: "[GET] Activity",
+              label: "[GET] List Activity",
               link: "/client-api/operations/list-activity",
             },
             {
-              label: "[GET] Behaviour",
+              label: "[GET] List Behaviour",
               link: "/client-api/operations/list-behaviour",
             },
             {
-              label: "[GET] Homeworks",
+              label: "[GET] List Homeworks",
               link: "/client-api/operations/list-homeworks",
             },
             {
-              label: "[GET] Lessons",
+              label: "[GET] List Lessons",
               link: "/client-api/operations/list-lessons",
             },
             {
-              label: "[GET] Badges",
+              label: "[GET] List Badges",
               link: "/client-api/operations/list-badges",
             },
             {
-              label: "[GET] Announcements",
+              label: "[GET] List Announcements",
               link: "/client-api/operations/list-announcements",
             },
             {
-              label: "[GET] Detentions",
+              label: "[GET] List Detentions",
               link: "/client-api/operations/list-detentions",
             },
             {
-              label: "[GET] Attendance",
+              label: "[GET] Get Attendance",
               link: "/client-api/operations/get-attendance",
             },
             {
-              label: "[GET] Pupil Fields",
+              label: "[GET] List Pupil Fields",
               link: "/client-api/operations/list-pupil-fields",
             },
             {
@@ -128,7 +128,7 @@ export default defineConfig({
               link: "/student-client-api/operations/ping",
             },
             {
-              label: "[GET] Rewards",
+              label: "[GET] List Rewards",
               link: "/student-client-api/operations/list-rewards",
             },
             {
@@ -136,7 +136,7 @@ export default defineConfig({
               link: "/student-client-api/operations/purchase-reward",
             },
             {
-              label: "[POST] Student Code",
+              label: "[POST] Get Student Code",
               link: "/student-client-api/operations/get-student-code",
             },
           ],
@@ -153,7 +153,7 @@ export default defineConfig({
               link: "/parent-client-api/operations/ping",
             },
             {
-              label: "[GET] Pupils",
+              label: "[GET] List Pupils",
               link: "/parent-client-api/operations/list-pupils",
             },
             {

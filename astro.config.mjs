@@ -68,6 +68,52 @@ export default defineConfig({
           ],
         },
         {
+          label: "Student Endpoints",
+          items: [
+            {
+              label: "[POST] Login",
+              link: "/student-client-api/operations/login",
+            },
+            {
+              label: "[POST] Ping",
+              link: "/student-client-api/operations/ping",
+            },
+            {
+              label: "[GET] List Rewards",
+              link: "/student-client-api/operations/list-rewards",
+            },
+            {
+              label: "[POST] Purchase Reward",
+              link: "/student-client-api/operations/purchase-reward",
+            },
+            {
+              label: "[POST] Get Student Code",
+              link: "/student-client-api/operations/get-student-code",
+            },
+          ],
+        },
+        {
+          label: "Parent Endpoints",
+          items: [
+            {
+              label: "[POST] Login",
+              link: "/parent-client-api/operations/login",
+            },
+            {
+              label: "[POST] Ping",
+              link: "/parent-client-api/operations/ping",
+            },
+            {
+              label: "[GET] List Pupils",
+              link: "/parent-client-api/operations/list-pupils",
+            },
+            {
+              label: "[POST] Change Password",
+              link: "/parent-client-api/operations/change-password",
+            },
+          ],
+        },
+        {
           label: "Global Endpoints",
           items: [
             {
@@ -129,52 +175,6 @@ export default defineConfig({
             {
               label: "[POST] Get Report Card Target",
               link: "/client-api/operations/get-on-report-card-target",
-            },
-          ],
-        },
-        {
-          label: "Student Endpoints",
-          items: [
-            {
-              label: "[POST] Login",
-              link: "/student-client-api/operations/login",
-            },
-            {
-              label: "[POST] Ping",
-              link: "/student-client-api/operations/ping",
-            },
-            {
-              label: "[GET] List Rewards",
-              link: "/student-client-api/operations/list-rewards",
-            },
-            {
-              label: "[POST] Purchase Reward",
-              link: "/student-client-api/operations/purchase-reward",
-            },
-            {
-              label: "[POST] Get Student Code",
-              link: "/student-client-api/operations/get-student-code",
-            },
-          ],
-        },
-        {
-          label: "Parent Endpoints",
-          items: [
-            {
-              label: "[POST] Login",
-              link: "/parent-client-api/operations/login",
-            },
-            {
-              label: "[POST] Ping",
-              link: "/parent-client-api/operations/ping",
-            },
-            {
-              label: "[GET] List Pupils",
-              link: "/parent-client-api/operations/list-pupils",
-            },
-            {
-              label: "[POST] Change Password",
-              link: "/parent-client-api/operations/change-password",
             },
           ],
         },

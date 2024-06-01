@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  start_date:
+    type: string
+  end_date:
+    type: string

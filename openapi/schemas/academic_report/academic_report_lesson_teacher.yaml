@@ -1,0 +1,8 @@
+type: object
+properties:
+  teacher_name:
+    type: string
+  id:
+    type: integer
+  text:
+    type: string

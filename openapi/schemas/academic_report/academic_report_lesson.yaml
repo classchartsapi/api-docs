@@ -1,0 +1,15 @@
+type: object
+properties:
+  attendance_percentage:
+    type: string
+    nullable: true
+  lesson_name:
+    type: string
+  teachers:
+    type: array
+    items:
+      $ref: "./academic_report_lesson_teacher.yaml"
+  grades:
+    type: array
+    items:
+      $ref: "./academic_report_lesson_grade.yaml"

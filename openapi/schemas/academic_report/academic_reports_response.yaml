@@ -1,0 +1,10 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./preview_academic_report.yaml"
+  meta:
+    type: array
+  success:
+    type: integer

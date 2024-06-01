@@ -289,3 +289,46 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+
+  /getacademicreports:
+    get:
+      summary: Academic reports
+      description: Get list of academic reports
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/academic_report/academic_reports_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
+
+  /getacademicreport/{id}:
+    get:
+      summary: Academic report
+      description: Get academic report by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the academic report
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/academic_report/academic_report_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"

@@ -1,0 +1,6 @@
+type: object
+properties:
+  field_name:
+    type: string
+  grade:
+    type: string

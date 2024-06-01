@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  start_date:
+    type: string
+  end_date:
+    type: string
+  overall_attendance_percentage:
+    type: string
+    nullable: true
+  attendance_percentage:
+    type: string
+    nullable: true
+  lessons:
+    type: array
+    items:
+      $ref: "./academic_report_lesson.yaml"

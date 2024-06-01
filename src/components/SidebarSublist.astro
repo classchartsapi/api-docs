@@ -22,7 +22,7 @@ const sublist = rawSublist.map((entry) => {
 	const shortMethod = method === "OPTIONS" ? "OPTNS" : method;
 	const external = isExternal(entry.href);
 
-	const icon = entry.label.match(/^\[.*?\]/)?.[0].replace(/[\[\]]/g, "");
+	const icon = method ? undefined : entry.label.match(/^\[.*?\]/)?.[0].replace(/[\[\]]/g, "");
 	const iconSize = icon?.match(/\((.*?)\)/)?.[1] || "1rem";
 	const iconName = icon?.replace(/\(.*?\)/, "");
 

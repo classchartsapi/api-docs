@@ -90,7 +90,7 @@ paths:
       operationId: delete-parent-behaviour
       summary: Delete Parent Behaviour Point
       description: >
-        Adds a behaviour point to a pupil's record.
+        Delets a behaviour point from a pupil's record.
       requestBody:
         required: true
         content:

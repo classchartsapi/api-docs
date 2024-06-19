@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 436310
+  name:
+    type: string
+    example: "Remarkable Reader"
+  icon_url:
+    type: string
+    example: "https:\/\/www.classcharts.com\/img\/behaveicons\/good\/+reading2.png"
+  is_daily_limit_reached:
+    type: boolean
+    example: false

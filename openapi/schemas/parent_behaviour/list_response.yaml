@@ -1,0 +1,11 @@
+type: object
+properties:
+  data:
+    type: array
+    items:
+      $ref: "./point.yaml"
+  meta:
+    type: array
+    items: {}
+  success:
+    type: integer

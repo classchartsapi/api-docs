@@ -1,0 +1,13 @@
+type: object
+properties:
+  meta:
+    nullable: true
+  success:
+    type: integer
+    example: 0
+  expired:
+    type: integer
+    example: 0
+  error:
+    type: string
+    example: "You have reached the daily limit awarding this behaviour"

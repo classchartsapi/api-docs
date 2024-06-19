@@ -59,6 +59,98 @@ paths:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
 
+  /parentbehaviours/{studentId}:
+    post:
+      operationId: list-parent-behaviour
+      summary: List Parent Behaviour
+      description: >
+        Lists the behaviour points for a pupil.
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: List of behaviour points
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/parent_behaviour/list_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
+
+  /deleteparentbehaviour/{studentId}:
+    post:
+      operationId: delete-parent-behaviour
+      summary: Delete Parent Behaviour Point
+      description: >
+        Adds a behaviour point to a pupil's record.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "./schemas/parent_behaviour/delete_request.yaml"
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Behaviour point deleted
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/empty_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
+
+  /addparentbehaviour/{studentId}:
+    post:
+      operationId: add-parent-behaviour
+      summary: Add Parent Behaviour Point
+      description: >
+        Adds a behaviour point to a pupil's record.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "./schemas/parent_behaviour/add_request.yaml"
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Behaviour point added or Daily limit reached
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "./schemas/parent_behaviour/add_response.yaml"
+                  - $ref: "./schemas/parent_behaviour/add_limit_error_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
+
   /login:
     post:
       operationId: login

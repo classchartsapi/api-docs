@@ -127,6 +127,24 @@ export default defineConfig({
               label: "[POST] Change Password",
               link: "/parent-client-api/operations/change-password",
             },
+            {
+              label: "Parent Behaviour",
+              collapsed: true,
+              items: [
+                {
+                  label: "[GET] List Point Types",
+                  link: "/parent-client-api/operations/list-parent-behaviour",
+                },
+                {
+                  label: "[POST] Delete Point",
+                  link: "/parent-client-api/operations/delete-parent-behaviour",
+                },
+                {
+                  label: "[POST] Add Point",
+                  link: "/parent-client-api/operations/add-parent-behaviour",
+                },
+              ],
+            },
           ],
         },
         {
@@ -177,20 +195,26 @@ export default defineConfig({
               link: "/client-api/operations/get-academic-report",
             },
             {
-              label: "[POST] List Report Cards",
-              link: "/client-api/operations/list-on-report-cards",
-            },
-            {
-              label: "[GET] Get Report Card",
-              link: "/client-api/operations/get-on-report-card",
-            },
-            {
-              label: "[GET] Get Report Card Summary",
-              link: "/client-api/operations/get-on-report-card-summary-comment",
-            },
-            {
-              label: "[GET] Get Report Card Target",
-              link: "/client-api/operations/get-on-report-card-target",
+              label: "Report Cards",
+              collapsed: true,
+              items: [
+                {
+                  label: "[GET] List Cards",
+                  link: "/client-api/operations/list-on-report-cards",
+                },
+                {
+                  label: "[GET] Get Card",
+                  link: "/client-api/operations/get-on-report-card",
+                },
+                {
+                  label: "[GET] Get Card Summary",
+                  link: "/client-api/operations/get-on-report-card-summary-comment",
+                },
+                {
+                  label: "[GET] Get Card Target",
+                  link: "/client-api/operations/get-on-report-card-target",
+                },
+              ],
             },
           ],
         },

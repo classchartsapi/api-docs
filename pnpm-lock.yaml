@@ -13,13 +13,13 @@ importers:
         version: 0.7.0(typescript@5.4.5)
       '@astrojs/starlight':
         specifier: ^0.23.2
-        version: 0.23.2(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))
+        version: 0.23.2(astro@4.9.2(typescript@5.4.5))
       '@astrojs/starlight-tailwind':
         specifier: ^2.0.3
-        version: 2.0.3(@astrojs/starlight@0.23.2(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5)))(@astrojs/tailwind@5.1.0(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))(tailwindcss@3.4.3))(tailwindcss@3.4.3)
+        version: 2.0.3(@astrojs/starlight@0.23.2(astro@4.9.2(typescript@5.4.5)))(@astrojs/tailwind@5.1.0(astro@4.9.2(typescript@5.4.5))(tailwindcss@3.4.3))(tailwindcss@3.4.3)
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))(tailwindcss@3.4.3)
+        version: 5.1.0(astro@4.9.2(typescript@5.4.5))(tailwindcss@3.4.3)
       '@fontsource-variable/inter':
         specifier: ^5.0.18
         version: 5.0.18
@@ -34,13 +34,13 @@ importers:
         version: 1.1.0
       astro:
         specifier: ^4.8.6
-        version: 4.9.2(@types/node@17.0.45)(typescript@5.4.5)
+        version: 4.9.2(typescript@5.4.5)
       sharp:
         specifier: ^0.32.5
         version: 0.32.6
       starlight-openapi:
-        specifier: ^0.6.3
-        version: 0.6.3(@astrojs/markdown-remark@5.1.0)(@astrojs/starlight@0.23.2(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5)))(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))(openapi-types@12.1.3)
+        specifier: ^0.6.4
+        version: 0.6.4(@astrojs/markdown-remark@5.1.0)(@astrojs/starlight@0.23.2(astro@4.9.2(typescript@5.4.5)))(astro@4.9.2(typescript@5.4.5))(openapi-types@12.1.3)
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
@@ -2452,8 +2452,8 @@ packages:
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
 
-  starlight-openapi@0.6.3:
-    resolution: {integrity: sha512-AHTbCJeGHzzhwVVi7UMgFgNKkvio2bbi9zQVtcI7CrMXVdd4jqL/L+R7MUxtr/DtzWG7PCCRsKPriwYubJ1ZPQ==}
+  starlight-openapi@0.6.4:
+    resolution: {integrity: sha512-TIioFhMmSKhKau6g/fx5WgWyPQve7cjP896wQek3sHqCJeLAsTSqUYCb33bBb/4D1/6sUioqlfJd9J3Lc1NQjA==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       '@astrojs/markdown-remark': '>=4.2.0'
@@ -2961,12 +2961,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.0.1(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))':
+  '@astrojs/mdx@3.0.1(astro@4.9.2(typescript@5.4.5))':
     dependencies:
       '@astrojs/markdown-remark': 5.1.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.9.2(@types/node@17.0.45)(typescript@5.4.5)
+      astro: 4.9.2(typescript@5.4.5)
       es-module-lexer: 1.5.3
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -2992,21 +2992,21 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/starlight-tailwind@2.0.3(@astrojs/starlight@0.23.2(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5)))(@astrojs/tailwind@5.1.0(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))(tailwindcss@3.4.3))(tailwindcss@3.4.3)':
+  '@astrojs/starlight-tailwind@2.0.3(@astrojs/starlight@0.23.2(astro@4.9.2(typescript@5.4.5)))(@astrojs/tailwind@5.1.0(astro@4.9.2(typescript@5.4.5))(tailwindcss@3.4.3))(tailwindcss@3.4.3)':
     dependencies:
-      '@astrojs/starlight': 0.23.2(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))
-      '@astrojs/tailwind': 5.1.0(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))(tailwindcss@3.4.3)
+      '@astrojs/starlight': 0.23.2(astro@4.9.2(typescript@5.4.5))
+      '@astrojs/tailwind': 5.1.0(astro@4.9.2(typescript@5.4.5))(tailwindcss@3.4.3)
       tailwindcss: 3.4.3
 
-  '@astrojs/starlight@0.23.2(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))':
+  '@astrojs/starlight@0.23.2(astro@4.9.2(typescript@5.4.5))':
     dependencies:
-      '@astrojs/mdx': 3.0.1(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))
+      '@astrojs/mdx': 3.0.1(astro@4.9.2(typescript@5.4.5))
       '@astrojs/sitemap': 3.1.5
       '@pagefind/default-ui': 1.1.0
       '@types/hast': 3.0.4
       '@types/mdast': 4.0.4
-      astro: 4.9.2(@types/node@17.0.45)(typescript@5.4.5)
-      astro-expressive-code: 0.35.3(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))
+      astro: 4.9.2(typescript@5.4.5)
+      astro-expressive-code: 0.35.3(astro@4.9.2(typescript@5.4.5))
       bcp-47: 2.1.0
       hast-util-from-html: 2.0.1
       hast-util-select: 6.0.2
@@ -3024,9 +3024,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/tailwind@5.1.0(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))(tailwindcss@3.4.3)':
+  '@astrojs/tailwind@5.1.0(astro@4.9.2(typescript@5.4.5))(tailwindcss@3.4.3)':
     dependencies:
-      astro: 4.9.2(@types/node@17.0.45)(typescript@5.4.5)
+      astro: 4.9.2(typescript@5.4.5)
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
@@ -3841,14 +3841,14 @@ snapshots:
 
   astring@1.8.6: {}
 
-  astro-expressive-code@0.35.3(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5)):
+  astro-expressive-code@0.35.3(astro@4.9.2(typescript@5.4.5)):
     dependencies:
-      astro: 4.9.2(@types/node@17.0.45)(typescript@5.4.5)
+      astro: 4.9.2(typescript@5.4.5)
       rehype-expressive-code: 0.35.3
 
   astro-vtbot@1.7.22: {}
 
-  astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5):
+  astro@4.9.2(typescript@5.4.5):
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@astrojs/internal-helpers': 0.4.0
@@ -3907,8 +3907,8 @@ snapshots:
       tsconfck: 3.1.0(typescript@5.4.5)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.12(@types/node@17.0.45)
-      vitefu: 0.2.5(vite@5.2.12(@types/node@17.0.45))
+      vite: 5.2.12
+      vitefu: 0.2.5(vite@5.2.12)
       which-pm: 2.2.0
       yargs-parser: 21.1.1
       zod: 3.23.8
@@ -5833,12 +5833,12 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  starlight-openapi@0.6.3(@astrojs/markdown-remark@5.1.0)(@astrojs/starlight@0.23.2(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5)))(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))(openapi-types@12.1.3):
+  starlight-openapi@0.6.4(@astrojs/markdown-remark@5.1.0)(@astrojs/starlight@0.23.2(astro@4.9.2(typescript@5.4.5)))(astro@4.9.2(typescript@5.4.5))(openapi-types@12.1.3):
     dependencies:
       '@astrojs/markdown-remark': 5.1.0
-      '@astrojs/starlight': 0.23.2(astro@4.9.2(@types/node@17.0.45)(typescript@5.4.5))
+      '@astrojs/starlight': 0.23.2(astro@4.9.2(typescript@5.4.5))
       '@readme/openapi-parser': 2.5.0(openapi-types@12.1.3)
-      astro: 4.9.2(@types/node@17.0.45)(typescript@5.4.5)
+      astro: 4.9.2(typescript@5.4.5)
       github-slugger: 2.0.0
     transitivePeerDependencies:
       - openapi-types
@@ -6163,18 +6163,17 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite@5.2.12(@types/node@17.0.45):
+  vite@5.2.12:
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.18.0
     optionalDependencies:
-      '@types/node': 17.0.45
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.2.12(@types/node@17.0.45)):
+  vitefu@0.2.5(vite@5.2.12):
     optionalDependencies:
-      vite: 5.2.12(@types/node@17.0.45)
+      vite: 5.2.12
 
   volar-service-css@0.0.45(@volar/language-service@2.2.5):
     dependencies:

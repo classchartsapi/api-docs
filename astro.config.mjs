@@ -99,6 +99,10 @@ export default defineConfig({
               link: "/student-client-api/operations/purchase-reward",
             },
             {
+              label: "[GET] Tick Homework",
+              link: "/student-client-api/operations/tick-homework",
+            },
+            {
               label: "[POST] Get Student Code",
               link: "/student-client-api/operations/get-student-code",
             },

@@ -1,0 +1,11 @@
+type: object
+properties:
+  data:
+    type: array
+    items: {}
+  meta:
+    type: array
+    items: {}
+  success:
+    type: integer
+    example: 1

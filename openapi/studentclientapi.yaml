@@ -117,6 +117,39 @@ paths:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
 
+  /homeworkticked/{homeworkStatusId}:
+    get:
+      operationId: tick-homework
+      summary: Tick Homework
+      description: Toggle the status of a homework item to 'completed'.
+
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: homeworkStatusId
+          in: query
+          required: true
+          description: The ID of the `homework.status` to mark as completed
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/empty_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
+
   /getcode:
     post:
       operationId: get-student-code

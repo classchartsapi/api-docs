@@ -163,6 +163,10 @@ export default defineConfig({
               link: "/client-api/operations/list-homeworks",
             },
             {
+              label: "[GET] List Classes",
+              link: "/client-api/operations/list-classes",
+            },
+            {
               label: "[GET] List Lessons",
               link: "/client-api/operations/list-lessons",
             },

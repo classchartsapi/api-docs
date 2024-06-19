@@ -133,6 +133,31 @@ paths:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
 
+  /classes/{studentId}:
+    get:
+      operationId: list-classes
+      summary: List Classes
+      description: Lists the student's classes
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Array of lessons
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/class/list_response.yaml"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/_common/error_response.yaml"
+
   /timetable/{studentId}:
     get:
       operationId: list-lessons

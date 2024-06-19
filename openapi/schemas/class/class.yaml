@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  room:
+    type: string
+  subject:
+    type: string
+  teacher:
+    type: string
+  teachers:
+    type: array
+    items:
+      type: string

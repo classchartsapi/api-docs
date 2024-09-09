@@ -125,12 +125,12 @@ paths:
 
       parameters:
         - name: studentId
-          in: path
+          in: query
           required: true
           schema:
             type: integer
         - name: homeworkStatusId
-          in: query
+          in: path
           required: true
           description: The ID of the `homework.status` to mark as completed
           schema:

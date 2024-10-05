@@ -4,10 +4,10 @@ info:
   description: This is the OpenAPI specification for the ClassCharts API used by the StudentClient.
   version: 28.7.1
 servers:
-  - url: https://www.classcharts.com/apiv2parent
-    description: Parent API
   - url: https://www.classcharts.com/apiv2student
     description: Student API
+  - url: https://www.classcharts.com/apiv2parent
+    description: Parent API
 
 paths:
   /behaviour/{studentId}:
@@ -44,6 +44,19 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { StudentClient } from "classcharts-api";
+
+            const client = new StudentClient("ABC123", "01/01/2000");
+            await client.login();
+
+            await client.getBehaviour({
+              from: "2023-04-01",
+              to: "2023-05-10",
+            });
 
   /activity/{studentId}:
     get:
@@ -88,6 +101,19 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { StudentClient } from "classcharts-api";
+
+            const client = new StudentClient("ABC123", "01/01/2000");
+            await client.login();
+
+            const activity = await client.getActivity({
+              from: "2023-04-01",
+              to: "2023-05-10"
+            });
 
   /homeworks/{studentId}:
     get:
@@ -132,6 +158,20 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { StudentClient } from "classcharts-api";
+
+            const client = new StudentClient("ABC123", "01/01/2000");
+            await client.login();
+
+            const homeworks = await client.getHomeworks({
+              from: "2023-04-01",
+              to: "2023-05-10",
+              displayDate: 'issue_date'
+            });
 
   /classes/{studentId}:
     get:
@@ -146,7 +186,7 @@ paths:
             type: integer
       responses:
         "200":
-          description: Array of lessons
+          description: Array of classes
           content:
             application/json:
               schema:
@@ -188,6 +228,18 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { StudentClient } from "classcharts-api";
+
+            const client = new StudentClient("ABC123", "01/01/2000");
+            await client.login();
+
+            const lessons = await client.getLessons({
+              date: "2023-04-01",
+            });
 
   /eventbadges/{studentId}:
     get:
@@ -213,6 +265,16 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { StudentClient } from "classcharts-api";
+
+            const client = new StudentClient("ABC123", "01/01/2000");
+            await client.login();
+
+            const badges = await client.getBadges();
 
   /announcements/{studentId}:
     get:
@@ -238,6 +300,16 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { StudentClient } from "classcharts-api";
+
+            const client = new StudentClient("ABC123", "01/01/2000");
+            await client.login();
+
+            const announcements = await client.getAnnouncements();
 
   /detentions/{studentId}:
     get:
@@ -263,6 +335,16 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { StudentClient } from "classcharts-api";
+
+            const client = new StudentClient("ABC123", "01/01/2000");
+            await client.login();
+
+            const detentions = await client.getDetentions();
 
   /attendance/{studentId}:
     get:
@@ -298,6 +380,16 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { StudentClient } from "classcharts-api";
+
+            const client = new StudentClient("ABC123", "01/01/2000");
+            await client.login();
+
+            const attendance = await client.getAttendance();
 
   /customfields/{studentId}:
     get:
@@ -323,6 +415,16 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { StudentClient } from "classcharts-api";
+
+            const client = new StudentClient("ABC123", "01/01/2000");
+            await client.login();
+
+            const attendance = await client.getPupilFields();
 
   /getacademicreports:
     get:

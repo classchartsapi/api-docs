@@ -1,0 +1,5 @@
+{
+	"title": "Parent API",
+	"pages": ["login", "ping", "change-password", "..."],
+	"defaultOpen": true
+}

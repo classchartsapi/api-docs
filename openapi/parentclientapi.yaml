@@ -39,6 +39,16 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { ParentClient } from "classcharts-api";
+
+            const client = new ParentClient("username", "password");
+            await client.login();
+
+            await client.getStudentInfo();
 
   /pupils:
     get:
@@ -58,6 +68,16 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { ParentClient } from "classcharts-api";
+
+            const client = new ParentClient("username", "password");
+            await client.login();
+
+            await client.getPupils();
 
   /parentbehaviours/{studentId}:
     post:
@@ -158,9 +178,6 @@ paths:
       description: >
         Logs into to a parent account.
 
-
-        This endpoint is used to authenticate a parent account. If the login is successful, a session ID will be returned in the response. This session ID should be used in subsequent requests to authenticate the parent account.
-
       requestBody:
         required: true
         content:
@@ -174,6 +191,14 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/auth/parent_login_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { ParentClient } from "classcharts-api";
+
+            const client = new ParentClient("username", "password");
+            await client.login();
 
   /password:
     post:
@@ -206,3 +231,13 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas/_common/error_response.yaml"
+      x-codeSamples:
+        - lang: js
+          label: JavaScript SDK
+          source: |
+            import { ParentClient } from "classcharts-api";
+
+            const client = new ParentClient("username", "oldPassword");
+            await client.login();
+
+            await client.changePassword("oldPassword", "newPassword");

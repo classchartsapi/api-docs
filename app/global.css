@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fd-sidebar-width: 375px;
+  --primary: 221.2 83.2% 53.3%;
+}
+
+.dark {
+  --primary: 213.1 93.9% 67.8%;
+}

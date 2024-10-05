@@ -1,0 +1,48 @@
+---
+title: Authentication
+description: Requirements for sending valid requests to ClassCharts.
+icon: KeyRound
+---
+
+import { School, House } from "lucide-react"
+
+## Logging in
+
+You'll need to login first, you can do this through the `/login` endpoint for your respective client.
+
+<Cards>
+  <Card
+    title="Student Login"
+    icon={<School />}
+    description="Authenticate with a student account"
+    href="/student-api/login"
+  />
+  <Card
+    title="Parent Login"
+    icon={<House />}
+    description="Authenticate with a parent account"
+    href="/parent-api/login"
+  />
+</Cards>
+
+With each request you must specify your authentication token in the `authorization` header, and optionally your student ID in the URL. However, it is **required** to specify student ID when using the parent API, as ClassCharts needs to know which student you would like to get data for.
+
+E.g. `/apiv2student/activity/2339528` with the header: `Authorization: Basic 5vf2v7n5uk9jftrxaarrik39vk6yjm48`.
+
+## Retaining a session
+
+To retain a session you need to ensure your `session_id` is always fresh. To do this, you'll need to call the `ping` endpoint with `include_data: "true"` for your respective client. In the request body there'll be a `meta.session_id` which can replace your old `session_id`.
+
+<Cards>
+  <Card
+    title="Student Ping"
+    description="Keep your student session alive"
+    href="/student-api/ping"
+  />
+  <Card
+    title="Parent Ping"
+    description="Keep your parent session alive"
+    href="/parent-api/ping"
+  />
+</Cards>
+

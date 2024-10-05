@@ -1,0 +1,5 @@
+{
+	"title": "Student API",
+	"pages": ["login", "ping", "get-student-code", "..."],
+	"defaultOpen": true
+}

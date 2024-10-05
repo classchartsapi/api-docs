@@ -5,6 +5,11 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  basePath: "/api-docs",
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
   async headers() {
     return [
       {

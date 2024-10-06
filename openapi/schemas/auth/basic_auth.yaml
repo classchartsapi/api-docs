@@ -1,0 +1,5 @@
+basic_auth:
+  type: http
+  scheme: basic
+  description: >
+    This is the `session_id` returned when logging in. e.g. `Basic eW91IHNob3VsZCBzdGFyIHRoaXMgcmVwbyE=`

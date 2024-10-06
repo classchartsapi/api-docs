@@ -9,11 +9,18 @@ servers:
   - url: https://www.classcharts.com/apiv2parent
     description: Parent API
 
+components:
+  securitySchemes:
+    basic_auth:
+      $ref: "./schemas/auth/basic_auth.yaml#/basic_auth"
+
 paths:
   /behaviour/{studentId}:
     get:
       operationId: list-behaviour
       summary: List Behaviour
+      security:
+        - basic_auth: []
       description: Gets the student's behaviour.
       parameters:
         - name: studentId
@@ -62,6 +69,8 @@ paths:
     get:
       operationId: list-activity
       summary: List Activity
+      security:
+        - basic_auth: []
       description: >
         The `from` field does not work as you would expect, since this endpoint is meant for pagination on the home page, Classcharts only returns a 50 points from the `to` field.
 
@@ -120,6 +129,8 @@ paths:
       operationId: list-homeworks
       summary: List Homeworks
       description: Gets the student's homeworks
+      security:
+        - basic_auth: []
 
       parameters:
         - name: studentId
@@ -178,6 +189,8 @@ paths:
       operationId: list-classes
       summary: List Classes
       description: Lists the student's classes
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: path
@@ -203,6 +216,8 @@ paths:
       operationId: list-lessons
       summary: List Lessons
       description: Gets the student's lessons for a given date
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: path
@@ -246,6 +261,8 @@ paths:
       operationId: list-badges
       summary: List Badges
       description: Gets the student's earned badges
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: path
@@ -281,6 +298,8 @@ paths:
       operationId: list-announcements
       summary: List Announcements
       description: Gets the student's announcements
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: path
@@ -316,6 +335,8 @@ paths:
       operationId: list-detentions
       summary: List Detentions
       description: Gets the student's detentions
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: path
@@ -351,6 +372,8 @@ paths:
       operationId: get-attendance
       summary: List Attendance
       description: Gets the student's attendance
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: path
@@ -396,6 +419,8 @@ paths:
       operationId: list-pupil-fields
       summary: List Pupil Fields
       description: Gets the student's pupil fields
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: path
@@ -431,6 +456,8 @@ paths:
       operationId: list-academic-reports
       summary: List Academic Reports
       description: Get list of academic reports
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: query
@@ -456,6 +483,8 @@ paths:
       operationId: get-academic-report
       summary: Get Academic Report
       description: Get academic report by ID
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: query
@@ -487,6 +516,8 @@ paths:
       operationId: list-on-report-cards
       summary: List On Report Cards
       description: Get list of on report cards
+      security:
+        - basic_auth: []
       parameters:
         - name: pupil_id
           in: query
@@ -511,6 +542,8 @@ paths:
       operationId: get-on-report-card
       summary: Get On Report Card
       description: Get on report card by ID
+      security:
+        - basic_auth: []
       parameters:
         - name: pupil_id
           in: query
@@ -542,6 +575,8 @@ paths:
       operationId: get-on-report-card-summary-comment
       summary: Get On Report Card Summary Comment
       description: Get on report card summary comment by date
+      security:
+        - basic_auth: []
       parameters:
         - name: pupil_id
           in: query
@@ -577,6 +612,8 @@ paths:
       operationId: get-on-report-card-target
       summary: Get On Report Card Target
       description: Get on report card target
+      security:
+        - basic_auth: []
       parameters:
         - name: pupil_id
           in: query

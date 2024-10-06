@@ -2,14 +2,9 @@
 title: Parent Ping
 description: >
   Gets basic information about the logged in parent and what access they have.  
+
   This endpoint is also used for revalidating your session id (authentication
   token).
-
-  To get your new authentication token, call the endpoint, and use the token in
-  the returned body (`body.meta.session_id`) as your new authentication token.
-
-
-  Access tokens should be refreshed every 180 seconds.
 full: true
 _openapi:
   method: POST
@@ -20,15 +15,10 @@ _openapi:
     contents:
       - content: >
           Gets basic information about the logged in parent and what access they
-          have.   This endpoint is also used for revalidating your session id
+          have.  
+
+          This endpoint is also used for revalidating your session id
           (authentication token).
-
-          To get your new authentication token, call the endpoint, and use the
-          token in the returned body (`body.meta.session_id`) as your new
-          authentication token.
-
-
-          Access tokens should be refreshed every 180 seconds.
 ---
 
 <APIPage document={"./openapi/parentclientapi.yaml"} operations={[{"path":"/ping","method":"post"}]} hasHead={false} />

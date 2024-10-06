@@ -7,6 +7,11 @@ servers:
   - url: https://www.classcharts.com/apiv2parent
     description: Parent API
 
+components:
+  securitySchemes:
+    basic_auth:
+      $ref: "./schemas/auth/basic_auth.yaml#/basic_auth"
+
 paths:
   /ping:
     post:
@@ -14,12 +19,10 @@ paths:
       summary: Parent Ping
       description: >
         Gets basic information about the logged in parent and what access they have.  
+
         This endpoint is also used for revalidating your session id (authentication token).
-
-        To get your new authentication token, call the endpoint, and use the token in the returned body (`body.meta.session_id`) as your new authentication token.
-
-
-        Access tokens should be refreshed every 180 seconds.
+      security:
+        - basic_auth: []
 
       requestBody:
         content:
@@ -55,6 +58,8 @@ paths:
       operationId: list-pupils
       summary: List Pupils
       description: Get a list of pupils connected to this parent's account
+      security:
+        - basic_auth: []
       responses:
         "200":
           description: Array of pupils
@@ -85,6 +90,8 @@ paths:
       summary: List Parent Behaviour
       description: >
         Lists the behaviour points for a pupil.
+      security:
+        - basic_auth: []
       parameters:
         - name: studentId
           in: path
@@ -111,6 +118,8 @@ paths:
       summary: Delete Parent Behaviour Point
       description: >
         Delets a behaviour point from a pupil's record.
+      security:
+        - basic_auth: []
       requestBody:
         required: true
         content:
@@ -143,6 +152,8 @@ paths:
       summary: Add Parent Behaviour Point
       description: >
         Adds a behaviour point to a pupil's record.
+      security:
+        - basic_auth: []
       requestBody:
         required: true
         content:
@@ -205,6 +216,8 @@ paths:
       operationId: change-password
       summary: Change Password
       description: Changes the login password for the current parent account
+      security:
+        - basic_auth: []
       requestBody:
         required: true
         content:

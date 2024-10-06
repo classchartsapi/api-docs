@@ -59,6 +59,11 @@ jobs:
       - name: Build with Next.js
         env:
           NEXT_PUBLIC_PROXY_URL: "https://classcharts-proxy.veloi.workers.dev"
+          NEXT_PUBLIC_ALGOLIA_APP_ID: ${{ secrets.NEXT_PUBLIC_ALGOLIA_APP_ID }}
+          NEXT_PUBLIC_ALGOLIA_INDEX: ${{ secrets.NEXT_PUBLIC_ALGOLIA_INDEX }}
+          NEXT_PUBLIC_ALGOLIA_API_KEY: ${{ secrets.NEXT_PUBLIC_ALGOLIA_API_KEY }}
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+
         run: pnpm build
 
       - name: Upload artifact

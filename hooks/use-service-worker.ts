@@ -11,7 +11,7 @@ export function useServiceWorker(): void {
       let refreshing = false;
 
       navigator.serviceWorker
-        .register("/service-worker.js")
+        .register("/api-docs/service-worker.js")
         .then((registration: ServiceWorkerRegistration) => {
           console.log(
             "Service Worker registered successfully:",

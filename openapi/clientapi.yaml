@@ -71,11 +71,7 @@ paths:
       summary: List Activity
       security:
         - basic_auth: []
-      description: >
-        The `from` field does not work as you would expect, since this endpoint is meant for pagination on the home page, Classcharts only returns a 50 points from the `to` field.
-
-
-        To get more points you will need to make use of the `last_id` field. Our [JavaScript Library](https://github.com/classchartsapi/classcharts-api-js) provides a `client.getFullActivity()` helper function to do this for you.
+      description: Lists up to 50 activity points
 
       parameters:
         - name: studentId
@@ -90,11 +86,13 @@ paths:
             format: date
         - name: to
           in: query
+          description: This endpoint is meant for pagination so the response will not include up to this date (unless there is less than 50 points)
           schema:
             type: string
             format: date
         - name: last_id
           in: query
+          description: This endpoint is meant for pagination so this field is used to start as a specific id onwards
           schema:
             type: string
       responses:

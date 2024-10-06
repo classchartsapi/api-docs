@@ -1,14 +1,6 @@
 ---
 title: List Activity
-description: >
-  The `from` field does not work as you would expect, since this endpoint is
-  meant for pagination on the home page, Classcharts only returns a 50 points
-  from the `to` field.
-
-
-  To get more points you will need to make use of the `last_id` field. Our
-  [JavaScript Library](https://github.com/classchartsapi/classcharts-api-js)
-  provides a `client.getFullActivity()` helper function to do this for you.
+description: Lists up to 50 activity points
 full: true
 _openapi:
   method: GET
@@ -17,17 +9,7 @@ _openapi:
   structuredData:
     headings: []
     contents:
-      - content: >
-          The `from` field does not work as you would expect, since this
-          endpoint is meant for pagination on the home page, Classcharts only
-          returns a 50 points from the `to` field.
-
-
-          To get more points you will need to make use of the `last_id` field.
-          Our [JavaScript
-          Library](https://github.com/classchartsapi/classcharts-api-js)
-          provides a `client.getFullActivity()` helper function to do this for
-          you.
+      - content: Lists up to 50 activity points
 ---
 
 <APIPage document={"./openapi/clientapi.yaml"} operations={[{"path":"/activity/{studentId}","method":"get"}]} hasHead={false} />

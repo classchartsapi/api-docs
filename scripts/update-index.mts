@@ -6,10 +6,10 @@ import path from "node:path";
 
 const getUrl = createGetUrl("/");
 
-const appId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
-const apiKey = process.env.ALGOLIA_API_KEY;
-
 export async function updateSearchIndexes(manifest: Manifest): Promise<void> {
+  const appId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
+  const apiKey = process.env.ALGOLIA_API_KEY;
+
   if (!appId || !apiKey) {
     throw new Error("NEXT_PUBLIC_ALGOLIA_APP_ID, ALGOLIA_API_KEY are required");
   }
@@ -22,7 +22,7 @@ export async function updateSearchIndexes(manifest: Manifest): Promise<void> {
       .filter((file) => file.collection === "docs")
       .map((docs) => {
         const url = getUrl(
-          getSlugs(parseFilePath(path.relative("content/", docs.path))),
+          getSlugs(parseFilePath(path.relative("content/docs/", docs.path))),
         );
 
         if (!docs.data.structuredData)

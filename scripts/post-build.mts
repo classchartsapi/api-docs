@@ -1,7 +1,7 @@
 import env from "@next/env";
-import { updateSearchIndexes } from "./update-index.mjs";
 import type { Manifest } from "fumadocs-mdx";
 import { readFileSync } from "node:fs";
+import { updateSearchIndexes } from "./update-index.mjs";
 
 env.loadEnvConfig(process.cwd());
 

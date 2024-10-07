@@ -1,26 +1,16 @@
-# api-docs
+# ClassCharts API Docs
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+Unofficial API documentation for ClassCharts.
 
-Run development server:
+## Development Commands
 
-```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
-```
+All commands are run from the root of the project, from a terminal:
 
-Open http://localhost:3000 with your browser to see the result.
-
-## Learn More
-
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.vercel.app) - learn about Fumadocs
+| Command                    | Action                                           |
+| :------------------------- | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm dev`                 | Starts local dev server at `localhost:3000`      |
+| `pnpm build`               | Builds the docs site for production              |
+| `pnpm start`               | Starts the built site for production             |
+| `pnpm generate`            | Generates all OpenAPI schema defs into files     |
+| `pnpm postbuild`           | Generates indexs for Algolia                     |

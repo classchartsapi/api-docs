@@ -2,6 +2,8 @@
 
 Unofficial API documentation for ClassCharts.
 
+You can find a hosted version at [classchartsapi.github.io/api-docs](https://classchartsapi.github.io/api-docs/).
+
 ## Development Commands
 
 All commands are run from the root of the project, from a terminal:

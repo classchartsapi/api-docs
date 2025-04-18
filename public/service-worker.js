@@ -43,18 +43,7 @@ async function handleRequest(request) {
 
   if (["POST", "PUT", "PATCH", "DELETE"].includes(request.method)) {
     if (request.body) {
-      const contentType = request.headers.get("Content-Type");
-      if (contentType && contentType.includes("application/json")) {
-        const jsonBody = await request.json();
-        const formData = new FormData();
-        for (const [key, value] of Object.entries(jsonBody)) {
-          formData.append(key, value);
-        }
-        requestInit.body = formData;
-        requestInit.headers.delete("Content-Type");
-      } else {
-        requestInit.body = await request.clone().arrayBuffer();
-      }
+      requestInit.body = await request.clone().arrayBuffer();
     }
     requestInit.duplex = "half";
   }

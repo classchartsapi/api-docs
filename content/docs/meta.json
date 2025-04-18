@@ -1,7 +1,7 @@
 {
 	"root": true,
 	"pages": [
-		"[CircleDot][Report an issue](https://github.com/classchartsapi/api-docs/issues/new)",
+		"[Report an issue](https://github.com/classchartsapi/api-docs/issues/new)",
 		"---Get Started---",
 		"index",
 		"authentication",

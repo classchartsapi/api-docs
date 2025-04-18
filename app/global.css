@@ -1,12 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+@source '../node_modules/fumadocs-openapi/dist/**/*.js';
 
 :root {
-  --fd-sidebar-width: 375px;
-  --primary: 221.2 83.2% 53.3%;
+	--fd-layout-width: 1400px;
+	--color-fd-primary: oklch(62.3% 0.214 259.815);
 }
 
 .dark {
-  --primary: 213.1 93.9% 67.8%;
+	--color-fd-primary: oklch(70.7% 0.165 254.624);
 }

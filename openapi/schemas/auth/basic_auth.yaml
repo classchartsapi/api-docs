@@ -1,5 +1,6 @@
 basic_auth:
-  type: http
-  scheme: basic
+  type: apiKey
+  in: header
+  name: Authorization
   description: >
-    This is the `session_id` returned when logging in. e.g. `Basic eW91IHNob3VsZCBzdGFyIHRoaXMgcmVwbyE=`
+    This is the `session_id` returned when logging in. It must be prefixed with `Basic`. e.g. `Basic eW91IHNob3VsZCBzdGFyIHRoaXMgcmVwbyE=`

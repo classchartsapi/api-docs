@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"generate": "tsx scripts/generate-docs.mts",
+		"prebuild": "pnpm generate",
 		"postbuild": "tsx scripts/post-build.mts",
 		"build": "next build",
 		"dev": "next dev",

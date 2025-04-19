@@ -85,7 +85,7 @@ paths:
             await client.getPupils();
 
   /parentbehaviours/{studentId}:
-    post:
+    get:
       operationId: list-parent-behaviour
       summary: List Parent Behaviour
       description: >

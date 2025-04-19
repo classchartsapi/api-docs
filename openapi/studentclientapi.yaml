@@ -6,6 +6,8 @@ info:
 servers:
   - url: https://www.classcharts.com/apiv2student
     description: Student API
+  - url: https://www.classcharts.com/apiv2parent
+    description: Parent API
 
 components:
   securitySchemes:

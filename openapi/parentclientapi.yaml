@@ -4,6 +4,8 @@ info:
   description: This is the OpenAPI specification for the ClassCharts API used by the ParentClient.
   version: 28.7.1
 servers:
+  - url: https://www.classcharts.com/apiv2student
+    description: Student API
   - url: https://www.classcharts.com/apiv2parent
     description: Parent API
 

@@ -2,7 +2,7 @@ type: object
 properties:
   id:
     type: integer
-  file_name:
+  filename:
     type: string
   file:
     type: string
